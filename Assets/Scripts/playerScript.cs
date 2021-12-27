@@ -37,5 +37,6 @@ public class playerScript : MonoBehaviour
         // This way, we would be able to detect a collision between the player and a patient that has an active task, and allow the interaction 
         // with space.
 
+        // FixedUpdate is used for physics, isn't it? Transformations aren't physics based.
     }
 }
