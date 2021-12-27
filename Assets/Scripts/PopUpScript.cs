@@ -24,9 +24,9 @@ public class PopUpScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && this.bandageScript.ItemBool && this.patient.RecoverBool)
         {
-            PopUpBool = false;
-            bandageScript.ItemBool = false;
-            patient.RecoverBool = false;
+            this.PopUpBool = false;
+            this.bandageScript.ItemBool = false;
+            this.patient.RecoverBool = false;
             Destroy(this.gameObject);
         }
     }
