@@ -24,6 +24,7 @@ public class PopUpScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && this.bandageScript.ItemBool && this.patient.RecoverBool)
         {
+            Debug.Log("You changed the patients bandages");
             this.PopUpBool = false;
             this.bandageScript.ItemBool = false;
             this.patient.RecoverBool = false;
