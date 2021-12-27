@@ -6,26 +6,26 @@ using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
     [SerializeField] private Text timerText;
-    [SerializeField] private float timeInSeconds;
+    [SerializeField] private UIManager UIManager;
 
     void Update()
     {
         // Countdown every second until 0 is reached.
-        if (timeInSeconds >= 0)
+        if (UIManager.TimeLeft >= 0)
         {
-            if ((int)timeInSeconds % 60 < 10)
+            if ((int)UIManager.TimeLeft % 60 < 10)
             {
-                timerText.text = (int)timeInSeconds / 60 + ":0" + (int)timeInSeconds % 60;
+                timerText.text = (int)UIManager.TimeLeft / 60 + ":0" + (int)UIManager.TimeLeft % 60;
             }
             else
             {
-                timerText.text = (int)timeInSeconds / 60 + ":" + (int)timeInSeconds % 60;
+                timerText.text = (int)UIManager.TimeLeft / 60 + ":" + (int)UIManager.TimeLeft % 60;
             }
 
-            timeInSeconds -= 1 * Time.deltaTime;
+            UIManager.TimeLeft -= Time.deltaTime;
         }
     }
 
-    // Timer starts at '5:59' although timerText.text gets displayed before timeInSeconds gets counted down. :thinking_Emoji: xD
-    // However, some other games skip the first second, too.
+    // Timer starts at '5:59' although timerText.text gets displayed before UIManager.timeLeft gets counted down. :thinking_Emoji: xD
+    // However, some other games "skip" the first second, too.
 }
