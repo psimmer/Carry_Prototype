@@ -200,7 +200,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7846683785938515027}
-  - component: {fileID: 7370449462576457930}
   m_Layer: 0
   m_Name: PopUp(Bandages)
   m_TagString: PopUp
@@ -215,8 +214,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786205338855267827}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.23073, y: 2.958413, z: 4.5940647}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -11.889257, y: 2.6999998, z: 4.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2045875014853574226}
@@ -224,21 +223,7 @@ Transform:
   - {fileID: 8396691287757300109}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &7370449462576457930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786205338855267827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 166d90b037546b84ea6590ffb7786c39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bandageScript: {fileID: 7791435529700135934, guid: 3ac189554ab6cce47847238b5575e4dd, type: 3}
-  patient: {fileID: 2308006702268206483, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &8099107520861900879
 GameObject:
   m_ObjectHideFlags: 0
