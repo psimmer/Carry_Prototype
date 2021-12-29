@@ -23,7 +23,7 @@ public class DisplayInventory : MonoBehaviour
         } 
     }
 
-    // checks if the item is null and checks if the PlayerScript trigger triggers a item,
+    // checks if the item is null and checks if the PlayerScript trigger triggers an item,
     //after this we Instantiate the triggert itemPrefab.
     public void UpdateDisplay()
     {

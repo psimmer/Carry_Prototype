@@ -14,7 +14,9 @@ public class PatientScript
         Name = name;
         patientHealth = health;
     }
+       
 
+    //maybe we use an independet script for the random time (Patrick)
      public float GetRandomTime()
     {
         randomTime = Random.Range(10, 20);

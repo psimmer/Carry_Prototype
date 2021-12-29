@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         RandomPopUp();
 
+        //using the esc button to open the pause menu
         if (Input.GetKey(KeyCode.Escape))
         {
             if (Time.timeScale > 0)
