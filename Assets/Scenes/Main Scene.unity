@@ -5216,8 +5216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 5438030d06207fb49ba04691fae1527d, type: 2}
   inventoryPos: {x: 0, y: 0, z: 0}
-  X_Pos: 0
-  Y_Pos: 0
   itemsDisplayed:
     item: {fileID: 0}
 --- !u!222 &7838013661720397166
