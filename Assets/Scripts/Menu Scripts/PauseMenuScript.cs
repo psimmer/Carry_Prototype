@@ -10,7 +10,8 @@ public class PauseMenuScript : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null){       //Singleton, so only one Pause scene exists --> doesnt work yet
+        //Singleton, so only one Pause scene exists --> doesnt work yet
+        if (instance == null){       
             instance = this;
         }
         else if (instance != this)
