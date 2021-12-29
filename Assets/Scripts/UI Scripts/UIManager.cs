@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void Pause()
+    public void GamePaused()
     {
-        Debug.Log("This button is useless yet. I just placed it in the UI to prepare it for Patrick :) This function is in the UIManager Script.");
+        //Time.timeScale = 0f;
+        //SceneManager.LoadScene("PauseMenu");
     }
 }
