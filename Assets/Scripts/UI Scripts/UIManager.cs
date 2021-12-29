@@ -19,7 +19,10 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void GamePaused()
     {
-        Time.timeScale = 0f;
-        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        if (Time.timeScale > 0)
+        {
+            Time.timeScale = 0f;
+            SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        }
     }
 }

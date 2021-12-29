@@ -23,6 +23,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void ContinueGame()
     {
+        
         SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1f;
     }
