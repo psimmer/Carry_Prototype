@@ -947,7 +947,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1317586890}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Pause
+        m_MethodName: GamePaused
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
