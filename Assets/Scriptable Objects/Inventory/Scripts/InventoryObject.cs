@@ -7,6 +7,7 @@ public class InventoryObject : ScriptableObject
 {
     public InventorySlot itemHolder;
 
+    //The InventorySlot gets a item --->> look in class InventorySlot
     public void AddItem(ItemObject item)
     {
             itemHolder.item = item;
@@ -16,7 +17,7 @@ public class InventoryObject : ScriptableObject
 [System.Serializable]
 public class InventorySlot
 {
-    public ItemObject item;
+    public ItemObject item;     // <--- 
 
     public InventorySlot(ItemObject this_item)
     {

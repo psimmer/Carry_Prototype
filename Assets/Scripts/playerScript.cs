@@ -6,6 +6,8 @@ public class PlayerScript : MonoBehaviour
 {
     public InventoryObject inventory;
 
+    //Getting the itemType about the Component of the item what we are triggering,
+    //and adding the item in our InventorySlot in the InventoryObject.cs
     private void OnTriggerEnter(Collider other)
     {
         Item item = other.GetComponent<Item>();
@@ -14,6 +16,7 @@ public class PlayerScript : MonoBehaviour
             inventory.AddItem(item.item);
         }
     }
+    // We lose the connectivity to the item which we was triggering and set itemholder to null
     private void OnTriggerExit(Collider other)
     {
         Item item = other.GetComponent<Item>();
@@ -22,6 +25,8 @@ public class PlayerScript : MonoBehaviour
             inventory.itemHolder.item = null;
         }
     }
+
+    // If we end the Application the itemholder set to null
     private void OnApplicationQuit()
     {
         inventory.itemHolder = null;
