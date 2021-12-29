@@ -2,23 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuScript : MonoBehaviour
 {
 
-    public static PauseMenuScript instance;
+    [SerializeField]
+    Button firstButton;
 
     private void Awake()
     {
-        //Singleton, so only one Pause scene exists --> doesnt work yet
-        if (instance == null){       
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-        //DontDestroyOnLoad(gameObject);  
+
+        firstButton.Select();
     }
 
     public void ContinueGame()
