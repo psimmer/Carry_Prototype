@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float playerMovementSpeed;
-    [SerializeField] private float playerRotationSpeed;
+
+    private float horizontalMovement;
+    private float verticalMovement;
     Transform playerTransform;
     void Start()
     {
@@ -13,30 +15,22 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.W))
-        {
-            playerTransform.Translate(Vector3.forward * playerMovementSpeed * Time.deltaTime);
-        }        
-        if(Input.GetKey(KeyCode.S))
-        {
-            playerTransform.Translate(Vector3.back * playerMovementSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            playerTransform.Rotate(Vector3.up * playerRotationSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            playerTransform.Rotate(Vector3.down * playerRotationSpeed * Time.deltaTime);
-        }
+        playerMovement();
+    }
 
-        // We should use the other type of movement (with the input from -1 to 1) because this one doesnt feel as smooth.
-        // I will change it later on/tomorrow, but I used this one to test the scene.
 
-        // I think we should use box colliders on the patients that are bigger than the collider from the model itself. 
-        // This way, we would be able to detect a collision between the player and a patient that has an active task, and allow the interaction 
-        // with space.
+    void playerMovement()
+    {
+        horizontalMovement = Input.GetAxis("Horizontal");
+        verticalMovement = Input.GetAxis("Vertical");
 
-        // FixedUpdate is used for physics, isn't it? Transformations aren't physics based.
+        Vector3 movement = new Vector3(horizontalMovement, 0.0f, verticalMovement);
+        if (Mathf.Abs(horizontalMovement) > 0.17 || Mathf.Abs(verticalMovement) > 0.17)
+        {
+            playerTransform.rotation = Quaternion.LookRotation(movement);
+        }
+        playerTransform.Translate(movement * playerMovementSpeed * Time.deltaTime, Space.World);
+
+
     }
 }
