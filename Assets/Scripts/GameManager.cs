@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject PopUpPrefab;
+    [SerializeField] private GameObject LevelUI;
     //All Patients Objects we have in the Prototyp
     [SerializeField] private GameObject patientObject01;
     [SerializeField] private GameObject patientObject02;
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
                 randomPatient.needSomething = true;
                 Vector3 objectPos = patObjects[randomIndex].transform.position;
                 PopUpPrefab.transform.position = new Vector3(objectPos.x, objectPos.y + 1.5f, objectPos.z);
-                Instantiate(PopUpPrefab);
+                Instantiate(PopUpPrefab, LevelUI.transform);
                 Debug.Log("Hello " + randomPatient.Name);
             }
 
