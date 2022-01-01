@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour
         patObjects.Add(patientObject02);
         patObjects.Add(patientObject03);
         patObjects.Add(patientObject04);
-        
+
+        // Stoping Menu Music.
+        Destroy(GameObject.FindGameObjectWithTag("MenuMusic"));
     }
 
     void Update()
