@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerScript : MonoBehaviour
 {
     public InventoryObject inventory;
+    public bool popUpBool { get; set; }
 
     //Getting the itemType about the Component of the item what we are triggering,
     //and adding the item in our InventorySlot in the InventoryObject.cs
@@ -15,6 +16,11 @@ public class playerScript : MonoBehaviour
         {
             inventory.AddItem(item.item);
         }
+        if (other.gameObject.CompareTag("Patient"))
+        {
+            popUpBool = true;
+            Debug.Log("true");
+        }
     }
     // We lose the connectivity to the item which we was triggering and set itemholder to null
     private void OnTriggerExit(Collider other)
@@ -23,6 +29,11 @@ public class playerScript : MonoBehaviour
         if (item)
         {
             inventory.itemHolder.item = null;
+        }
+        if (other.gameObject.CompareTag("Patient"))
+        {
+            popUpBool = false;
+            Debug.Log("false");
         }
     }
 

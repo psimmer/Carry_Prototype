@@ -12,13 +12,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject patientObject02;
     [SerializeField] private GameObject patientObject03;
     [SerializeField] private GameObject patientObject04;
-
+    [SerializeField] private playerScript player;
+    private DisplayPopUp popUp;
     //All Patients we have in the Prototyp
     private PatientScript patient01 = new PatientScript(100, "Patient01");
     private PatientScript patient02 = new PatientScript(90, "Patient02");
     private PatientScript patient03 = new PatientScript(70, "Patient03");
     private PatientScript patient04 = new PatientScript(70, "Patient04");
-
+    //von hier
+    //bis hier
     private bool timer = false;
     // 2 Lists of the Objects and the reference
     private List<GameObject> patObjects = new List<GameObject>(4);
@@ -42,16 +44,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         RandomPopUp();
-
-        //using the esc button to open the pause menu
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            if (Time.timeScale > 0)
-            {
-                Time.timeScale = 0f;
-                SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
-            }
-        }
+        escPause();
+        DestroyPopUp();
     }
     // Instantiate randomly a pop Up at a random patient
     public void RandomPopUp()
@@ -74,6 +68,29 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    public void DestroyPopUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && player.popUpBool)
+        {
+            popUp.DestroyMe();
+        }
+    }
+
+
+    //using the esc button to open the pause menu
+    public void escPause()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            if (Time.timeScale > 0)
+            {
+                Time.timeScale = 0f;
+                SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+            }
+        }
+    }
+
     IEnumerator InstantiatePopUp()
     {
         yield return new WaitForSeconds(patient01.GetRandomTime());

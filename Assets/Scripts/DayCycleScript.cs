@@ -20,6 +20,6 @@ public class DayCycleScript : MonoBehaviour
     void Update()
     {
         transform.rotation = Quaternion.Lerp(dayStart, dayEnd, Time.time * (speed / (6 * 6)));
-        Debug.Log((int)Time.time);
+        //Debug.Log((int)Time.time);
     }
 }
