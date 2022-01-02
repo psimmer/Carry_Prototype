@@ -55,8 +55,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(horizontalMovement, 0f, verticalMovement);
         Vector3 rotation = new Vector3(horizontalRotation, 0f, verticalRotation);
         movement = movement.normalized * Time.deltaTime * playerMovementSpeed;
-        Debug.Log(movement);
-
 
         // if the axis input is higher than 0.17 (number pulled out of my ass, but it works nicely)
         // then rotate player in the direction of the input. Without this number, it will start rotating constantly.
