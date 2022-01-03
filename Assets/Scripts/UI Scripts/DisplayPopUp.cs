@@ -14,9 +14,6 @@ public class DisplayPopUp : MonoBehaviour
         transform.LookAt(transform.position + cam.transform.forward);
     }
 
-    public void DestroyMe()
-    {
-        Destroy(this.gameObject);
-    }
+   
 
 }

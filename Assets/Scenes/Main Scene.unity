@@ -362,7 +362,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 82a1ac17368d32d49a126c878092e673, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1bbde19f85fe587408e7e339d5a2d988, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5289,6 +5289,7 @@ MonoBehaviour:
   patientObject03: {fileID: 580869105}
   patientObject04: {fileID: 164561342}
   player: {fileID: 606495096}
+  popUpBandages: {fileID: -1756573206496376815, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
 --- !u!4 &1903867186
 Transform:
   m_ObjectHideFlags: 0
