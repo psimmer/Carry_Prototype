@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
@@ -23,6 +24,10 @@ public class TimerScript : MonoBehaviour
             }
 
             UIManager.TimeLeft -= Time.deltaTime;
+        }
+        else
+        {
+            SceneManager.LoadScene("LvlFinishMenu");
         }
     }
 
