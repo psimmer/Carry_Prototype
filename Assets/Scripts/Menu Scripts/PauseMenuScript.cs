@@ -16,11 +16,20 @@ public class PauseMenuScript : MonoBehaviour
         firstButton.Select();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            ContinueGame();
+        }
+    }
+
     public void ContinueGame()
     {
         
         SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1f;
+        FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Play();
     }
 
     public void QuitToMainMenu()

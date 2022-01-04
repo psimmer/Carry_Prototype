@@ -86,11 +86,13 @@ public class GameManager : MonoBehaviour
     //using the esc button to open the pause menu
     public void escPause()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (Time.timeScale > 0)
             {
                 Time.timeScale = 0f;
+                FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Pause();
                 SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
             }
         }
