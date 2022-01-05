@@ -13,6 +13,6 @@ public class BandageObj : ItemObject
 
     public void Awake()
     {
-        type = ItemType.Bandage;
+        itemType = ItemType.Bandage;
     }
 }

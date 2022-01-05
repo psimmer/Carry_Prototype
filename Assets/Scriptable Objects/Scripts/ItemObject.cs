@@ -6,7 +6,7 @@ using UnityEngine;
 public enum ItemType
 {
     Bandage,
-    Pills,                  //All ItemTypes we have
+    Pill,                  //All ItemTypes we have
     Telephone,
     CoffeMachine
 }
@@ -18,5 +18,5 @@ public enum ItemType
 public class ItemObject : ScriptableObject
 {
     public GameObject prefab;
-    public ItemType type;
+    public ItemType itemType;
 }

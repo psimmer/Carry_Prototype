@@ -16,11 +16,11 @@ public class DisplayInventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
             Destroy(obj);
             UpdateDisplay();
-        } 
+        //} 
     }
 
     // checks if the item is null and checks if the PlayerScript trigger triggers an item,

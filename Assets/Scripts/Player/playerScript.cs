@@ -5,54 +5,72 @@ using UnityEngine;
 public class playerScript : MonoBehaviour
 {
     public InventoryObject inventory;
-    public bool popUpBool { get; set; }
+    public bool collidesWithPatient { get; set; }
 
-    //Getting the itemType about the Component of the item what we are triggering,
-    //and adding the item in our InventorySlot in the InventoryObject.cs
     private void OnTriggerEnter(Collider other)
     {
-        Item item = other.GetComponent<Item>();
-        if (item)
-        {
-            inventory.AddItem(item.item);
-        }
+        // popUpBool checks if the player triggers with the patient
         if (other.gameObject.CompareTag("Patient"))
         {
-            popUpBool = true;
+            collidesWithPatient = true;
             Debug.Log("true");
         }
     }
     // We lose the connectivity to the item which we was triggering and set itemholder to null
     private void OnTriggerExit(Collider other)
     {
-        Item item = other.GetComponent<Item>();
-        if (item)
-        {
-            inventory.itemHolder.item = null;
-        }
         if (other.gameObject.CompareTag("Patient"))
         {
-            popUpBool = false;
+            collidesWithPatient = false;
             Debug.Log("false");
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Patient"))
+        //Getting the itemType about the Component of the item what we are triggering,
+        //and adding the item in our InventorySlot in the InventoryObject.cs
+        Item item = other.GetComponent<Item>();
+        if (Input.GetKey(KeyCode.Space) && item)
         {
-            Treatment(other.gameObject);
+            inventory.AddItem(item.item);
+        }
+
+        if (other.gameObject.CompareTag("Patient") && inventory.itemHolder.item != null)
+        {
+            switch (other.GetComponent<PatientScript>().currentTask)
+            {
+                case Task.Wound:    // For a wound you need Bandage.
+                    {                         
+                        if(inventory.itemHolder.item.itemType == ItemType.Bandage)
+                        {
+                            Treatment(other.gameObject);
+                        }                      
+                        break;                
+                    }
+                case Task.Pain:     //For Pain you need Pill.
+                    {
+                        if (inventory.itemHolder.item.itemType == ItemType.Pill)
+                        {
+                            Treatment(other.gameObject);
+                        }
+                        break;
+                    }
+
+            }
         }
     }
 
     public void Treatment(GameObject patient)
-    {
-        if (Input.GetKey(KeyCode.Space) && popUpBool)
-        {
+    {                                                            
+        if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
+        {                                                       
             patient.GetComponent<PatientScript>().DestroyPopUp();
             patient.GetComponent<PatientScript>().needSomething = false;
+            inventory.itemHolder.item = null;
         }
     }
+
     // If we end the Application the itemholder set to null
     private void OnApplicationQuit()
     {

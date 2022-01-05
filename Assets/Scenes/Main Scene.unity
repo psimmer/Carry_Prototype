@@ -143,6 +143,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: pillPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: bandagePopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
       value: 10
       objectReference: {fileID: 0}
@@ -623,6 +631,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: myPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: pillPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: bandagePopUp
       value: 
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
@@ -1559,17 +1575,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2618188073631541129, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
   m_PrefabInstance: {fileID: 697551804}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &606495096 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
-  m_PrefabInstance: {fileID: 697551804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606495095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43641557b824396488da417139bda701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &606495098
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2081,6 +2086,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: myPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: pillPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: bandagePopUp
       value: 
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
@@ -3668,6 +3681,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: myPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: pillPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: bandagePopUp
       value: 
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
@@ -5343,14 +5364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20b50a733252dc478bd80154b8de4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopUpPrefab: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
-  LevelUI: {fileID: 372557901}
-  player: {fileID: 606495096}
   patient01: {fileID: 1932391590}
   patient02: {fileID: 318956349}
   patient03: {fileID: 1461296265}
   patient04: {fileID: 1640565308}
-  currentPopUp: {fileID: 0}
 --- !u!4 &1903867186
 Transform:
   m_ObjectHideFlags: 0

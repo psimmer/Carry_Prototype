@@ -13,6 +13,6 @@ public class PillsObject : ItemObject
 
     private void Awake()
     {
-        type = ItemType.Pills;
+        itemType = ItemType.Pill;
     }
 }
