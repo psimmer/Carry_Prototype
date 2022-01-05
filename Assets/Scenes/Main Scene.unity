@@ -138,6 +138,18 @@ PrefabInstance:
       propertyPath: minTimeTillTask
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: myPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: maxTimeTillTask
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: minTimeTillTask
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -609,6 +621,18 @@ PrefabInstance:
       propertyPath: minTimeTillTask
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: myPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: maxTimeTillTask
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: minTimeTillTask
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -852,6 +876,17 @@ Transform:
   m_Father: {fileID: 1303533050}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318956349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+  m_PrefabInstance: {fileID: 929907363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012edd1bb41e85f47a63e9846b6e4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &334589190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,6 +2078,18 @@ PrefabInstance:
     - target: {fileID: 2308006702268206483, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: myPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: maxTimeTillTask
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: minTimeTillTask
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -3593,6 +3640,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 4a223aa6bb867e04299358a3f734fe90, type: 2}
+--- !u!114 &1461296265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+  m_PrefabInstance: {fileID: 21822011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012edd1bb41e85f47a63e9846b6e4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1467169515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3607,6 +3665,18 @@ PrefabInstance:
     - target: {fileID: 2308006702268206483, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: myPopUp
+      value: 
+      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: maxTimeTillTask
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: minTimeTillTask
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -4422,6 +4492,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1640565308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+  m_PrefabInstance: {fileID: 1467169515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012edd1bb41e85f47a63e9846b6e4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1647924528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5769401912177554413, guid: e29833bfb1123a445aca95b6e4aa894c, type: 3}
@@ -5265,10 +5346,10 @@ MonoBehaviour:
   PopUpPrefab: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
   LevelUI: {fileID: 372557901}
   player: {fileID: 606495096}
-  patient01: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
-  patient02: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
-  patient03: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
-  patient04: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+  patient01: {fileID: 1932391590}
+  patient02: {fileID: 318956349}
+  patient03: {fileID: 1461296265}
+  patient04: {fileID: 1640565308}
   currentPopUp: {fileID: 0}
 --- !u!4 &1903867186
 Transform:
@@ -5284,6 +5365,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932391590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+  m_PrefabInstance: {fileID: 173231329}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012edd1bb41e85f47a63e9846b6e4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1956358040
 GameObject:
   m_ObjectHideFlags: 0

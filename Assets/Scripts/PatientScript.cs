@@ -10,18 +10,36 @@ public enum Task
 
 public class PatientScript : MonoBehaviour
 {
+    [SerializeField]private GameObject instantiatedPopUp;
+    public GameObject InstantiatedPopUp
+    {
+        get { return instantiatedPopUp; }
+        set { instantiatedPopUp = value; }
+    }
 
 
+
+    [SerializeField] private GameObject myPopUp;
+    public GameObject MyPopUp
+    {
+        get { return myPopUp; }
+        set { myPopUp = value; }
+    }
     public string Name { get; set; }
     public float PatientHealth { get; set; }
-    [SerializeField]
+    [SerializeField] private float minTimeTillTask;
+    [SerializeField] private float maxTimeTillTask;
+
     public bool needSomething { get; set; }
     public float randomTime { get; set; }
 
-    [SerializeField]
-    public Task currentTask;
+    [SerializeField] public Task currentTask;
 
-
+    private void Start()
+    {
+        needSomething = false;
+        instantiatedPopUp = null;
+    }
     //public PatientScript(float health, string name, ItemType _item)
     //{
     //    Name = name;
@@ -39,7 +57,7 @@ public class PatientScript : MonoBehaviour
     //maybe we use an independet script for the random time (Patrick)
     public float GetRandomTime()
      {
-        randomTime = Random.Range(10, 20);
+        randomTime = Random.Range(minTimeTillTask, maxTimeTillTask);
         return randomTime;
      }
 

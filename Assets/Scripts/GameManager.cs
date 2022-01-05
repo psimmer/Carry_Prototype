@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     //private List<GameObject> patObjects = new List<GameObject>(4);
     private List<PatientScript> patients = new List<PatientScript>();
     private List<PatientScript> illPatients = new List<PatientScript>();
-    private List<GameObject> popUps = new List<GameObject>();
+    //private List<GameObject> popUps = new List<GameObject>();
 
     void Start()
     {
@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
         int randomIndex = Random.Range(0, patients.Count);
         PatientScript randomPatient = patients[randomIndex]; // in liste
         //illPatients.Add(randomPatient);
+        
         if (randomPatient.needSomething == false)
         {
             StartCoroutine("InstantiatePopUp");
@@ -72,13 +73,14 @@ public class GameManager : MonoBehaviour
                 timer = false;
                 randomPatient.needSomething = true;
                 Vector3 objectPos = patients[randomIndex].transform.position;
-                PopUpPrefab.transform.position = new Vector3(objectPos.x, objectPos.y + 1.5f, objectPos.z);
-                popUp = Instantiate(PopUpPrefab, LevelUI.transform);
-                popUps.Add(popUp);
+                randomPatient.MyPopUp.transform.position = new Vector3(objectPos.x, objectPos.y + 1.5f, objectPos.z);
+                randomPatient.InstantiatedPopUp = Instantiate(randomPatient.MyPopUp, LevelUI.transform);
                 Debug.Log("Hello " + randomPatient.Name);
             }
-
-
+        }
+        else
+        {
+            //Debug.Log("instantiated ist nicht null");
         }
     }
 
@@ -86,7 +88,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && player.popUpBool)
         {
-            currentPopUp.DestroyMe(popUps[popUps.Count - 1]); 
+            currentPopUp.DestroyMe(this.PopUpPrefab); 
         }
     }
 
