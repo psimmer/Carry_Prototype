@@ -235,6 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 505004206}
   - component: {fileID: 505004207}
+  - component: {fileID: 505004208}
   m_Layer: 5
   m_Name: MasterVolumeSlider
   m_TagString: Untagged
@@ -312,10 +313,35 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.0001
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 505004208}
+        m_TargetAssemblyTypeName: MasterVolumeSliderScript, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &505004208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505004205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc01f7acdd87a44ea78de9fc30f8b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 82a1ac17368d32d49a126c878092e673, type: 2}
 --- !u!1 &576490875
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,10 +820,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopUpPrefab: {fileID: 6786205338855267827, guid: 4071330680f070b4eae1cbf35e59d7c2, type: 3}
   LevelUI: {fileID: 0}
-  patientObject01: {fileID: 0}
-  patientObject02: {fileID: 0}
-  patientObject03: {fileID: 0}
-  patientObject04: {fileID: 0}
+  player: {fileID: 0}
+  patient01: {fileID: 0}
+  patient02: {fileID: 0}
+  patient03: {fileID: 0}
+  patient04: {fileID: 0}
+  currentPopUp: {fileID: 0}
 --- !u!114 &840179119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +1007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Master Volume (doesn't work yet)
+  m_text: Master Volume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

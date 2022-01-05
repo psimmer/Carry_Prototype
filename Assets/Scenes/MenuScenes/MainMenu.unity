@@ -730,10 +730,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopUpPrefab: {fileID: 6786205338855267827, guid: 4071330680f070b4eae1cbf35e59d7c2, type: 3}
   LevelUI: {fileID: 0}
-  patientObject01: {fileID: 0}
-  patientObject02: {fileID: 0}
-  patientObject03: {fileID: 0}
-  patientObject04: {fileID: 0}
+  player: {fileID: 0}
+  patient01: {fileID: 0}
+  patient02: {fileID: 0}
+  patient03: {fileID: 0}
+  patient04: {fileID: 0}
+  currentPopUp: {fileID: 0}
 --- !u!114 &840179119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,7 +913,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 82a1ac17368d32d49a126c878092e673, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8da962da361585848aa81ecbcef1cd14, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
