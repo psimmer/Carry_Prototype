@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
     {
         RandomPopUp();
         escPause();
-        DestroyPopUp();
         
     }
     // Instantiate randomly a pop Up at a random patient
@@ -72,9 +71,10 @@ public class GameManager : MonoBehaviour
             {
                 timer = false;
                 randomPatient.needSomething = true;
-                Vector3 objectPos = patients[randomIndex].transform.position;
-                randomPatient.MyPopUp.transform.position = new Vector3(objectPos.x, objectPos.y + 1.5f, objectPos.z);
-                randomPatient.InstantiatedPopUp = Instantiate(randomPatient.MyPopUp, LevelUI.transform);
+                randomPatient.InstantiatePopUp();
+                //Vector3 objectPos = patients[randomIndex].transform.position;
+                //randomPatient.MyPopUp.transform.position = new Vector3(objectPos.x, objectPos.y + 1.5f, objectPos.z);
+                //randomPatient.InstantiatedPopUp = Instantiate(randomPatient.MyPopUp, LevelUI.transform);
                 Debug.Log("Hello " + randomPatient.Name);
             }
         }
@@ -84,13 +84,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DestroyPopUp()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && player.popUpBool)
-        {
-            currentPopUp.DestroyMe(this.PopUpPrefab); 
-        }
-    }
+    //public void Treatment()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space) && player.popUpBool)
+    //    {
+    //        GetComponent<PatientScript>().DestroyPopUp();
+    //    }
+    //}
 
 
     //using the esc button to open the pause menu

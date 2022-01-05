@@ -40,20 +40,20 @@ public class PatientScript : MonoBehaviour
         needSomething = false;
         instantiatedPopUp = null;
     }
-    //public PatientScript(float health, string name, ItemType _item)
-    //{
-    //    Name = name;
-    //    PatientHealth = health;
-    //    item = _item;
-    //}
 
-    //public PatientScript(float health, string name)
-    //{
-    //    Name = name;
-    //    PatientHealth = health;
-    //}
+    public void InstantiatePopUp()
+    {
+        Vector3 patientPos = transform.position;
+        //transform.position = new Vector3(patientPos.x, patientPos.y + 1.5f, patientPos.z);
+        instantiatedPopUp = Instantiate(myPopUp);
+        instantiatedPopUp.transform.position = new Vector3(patientPos.x, patientPos.y + 1.5f, patientPos.z);
+    }
 
-
+    public void DestroyPopUp()
+    {
+        Destroy(instantiatedPopUp);
+        //DestroyImmediate(obj, true);
+    }
     //maybe we use an independet script for the random time (Patrick)
     public float GetRandomTime()
      {

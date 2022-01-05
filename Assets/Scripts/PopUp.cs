@@ -10,9 +10,5 @@ public class PopUp : MonoBehaviour
         Pills
     }
 
-    public void DestroyMe(GameObject obj)
-    {
-        //Destroy(obj);
-        DestroyImmediate(obj, true);
-    }
+   
 }

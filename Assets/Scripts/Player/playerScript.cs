@@ -37,6 +37,22 @@ public class playerScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Patient"))
+        {
+            Treatment(other.gameObject);
+        }
+    }
+
+    public void Treatment(GameObject patient)
+    {
+        if (Input.GetKey(KeyCode.Space) && popUpBool)
+        {
+            patient.GetComponent<PatientScript>().DestroyPopUp();
+            patient.GetComponent<PatientScript>().needSomething = false;
+        }
+    }
     // If we end the Application the itemholder set to null
     private void OnApplicationQuit()
     {
