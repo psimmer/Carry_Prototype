@@ -1169,7 +1169,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  lerpDuration: 1
+  lerpDuration: 0.2
+  player: {fileID: 606495096}
 --- !u!1 &473346414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,7 +1824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: maxStressLvl
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: stressLvlBar
@@ -1831,7 +1832,15 @@ PrefabInstance:
       objectReference: {fileID: 427232014}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: currentStressLvl
-      value: 6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: stressMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: stressReductionMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6133671444424443548, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: m_IsTrigger

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc7adb365f03ee4dade370b28477957, type: 3}
   m_Name: Bandage
   m_EditorClassIdentifier: 
+  restoreHealth: 5
   prefab: {fileID: 1337541185449094420, guid: 0e2f373e37a64764fb0a6ec962a89d4b, type: 3}
-  type: 0
-  description: 
-  restoreHealth: 10
+  itemType: 0

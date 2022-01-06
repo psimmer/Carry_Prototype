@@ -29,7 +29,7 @@ public class DisplayInventory : MonoBehaviour
     {
         if (inventory.itemHolder.item && inventory.itemHolder.item != null)
         {
-            obj = Instantiate(inventory.itemHolder.item.prefab, Vector3.zero, Quaternion.identity, transform);
+            obj = Instantiate(inventory.itemHolder.item.Prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = Vector3.zero;
             itemsDisplayed = inventory.itemHolder;
         }
@@ -40,7 +40,7 @@ public class DisplayInventory : MonoBehaviour
     {
         if (itemsDisplayed.item != null)
         {
-            obj = Instantiate(inventory.itemHolder.item.prefab, Vector3.zero, Quaternion.identity, transform);
+            obj = Instantiate(inventory.itemHolder.item.Prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = Vector3.zero;
         }
     }

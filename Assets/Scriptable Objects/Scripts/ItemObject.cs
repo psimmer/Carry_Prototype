@@ -17,6 +17,25 @@ public enum ItemType
 /// </summary>
 public class ItemObject : ScriptableObject
 {
-    public GameObject prefab;
-    public ItemType itemType;
+    [SerializeField] private int restoreHealth;
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private ItemType itemType;
+
+    public ItemType ItemType
+    {
+        get { return itemType; }
+        set { itemType = value; }
+    }
+
+    public int RestoreHealth
+    {
+        get { return restoreHealth; }
+        set { restoreHealth = value; }
+    }
+
+    public GameObject Prefab
+    {
+        get { return prefab; }
+        set { prefab = value; }
+    }
 }

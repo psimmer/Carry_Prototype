@@ -9,10 +9,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Scriptable Objects", menuName = "Items/Pills")]
 public class PillsObject : ItemObject
 {
-    public int restoreHealth;
 
     private void Awake()
     {
-        itemType = ItemType.Pill;
+        ItemType = ItemType.Pill;
     }
 }

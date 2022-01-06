@@ -10,13 +10,36 @@ public class playerScript : MonoBehaviour
     [SerializeField] private float currentStressLvl;
     [SerializeField] private float maxStressLvl;
 
+    [Tooltip("This value multiplies the stress")]
+    [Range(1, 4)]
+    [SerializeField] private float stressMultiplier;
+
+
+    [Tooltip("This value reduce the stress")]
+    [Range(0, 1)]
+    [SerializeField] private float stressReductionMultiplier;
+
     public InventoryObject inventory;
     public bool collidesWithPatient { get; set; }
-
-    private void Start()
+    public float MaxStressLvl
     {
-        maxStressLvl = 10f;
-        //stressLvlBar.GetComponent<Slider>().value = 0f;
+        get { return maxStressLvl; }
+    }
+
+    public float CurrentStressLvl
+    {
+        get { return currentStressLvl; }
+        set 
+        { 
+            if (value > 0) // maybe we need to check the upper limit too of the stress Level.
+            {
+                currentStressLvl = value; 
+            }
+            else
+            {
+                currentStressLvl = 0;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,7 +79,7 @@ public class playerScript : MonoBehaviour
             {
                 case Task.Bandage:
                     {                         
-                        if(inventory.itemHolder.item.itemType == ItemType.Bandage)
+                        if(inventory.itemHolder.item.ItemType == ItemType.Bandage)
                         {
                             CorrectTreatment(other.gameObject, inventory.itemHolder.item);
                         }
@@ -68,7 +91,7 @@ public class playerScript : MonoBehaviour
                     }
                 case Task.Pill:
                     {
-                        if (inventory.itemHolder.item.itemType == ItemType.Pill)
+                        if (inventory.itemHolder.item.ItemType == ItemType.Pill)
                         {
                             CorrectTreatment(other.gameObject, inventory.itemHolder.item);
                         }
@@ -93,11 +116,9 @@ public class playerScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
         {
-            
             inventory.itemHolder.item = null;
-            patient.CurrentHP--;        //!!!!!modify hard code!!!!!!
-            this.currentStressLvl+=3;    //!!!!!modify hard code!!!!!!
-            
+            patient.CurrentHP -= currentItem.RestoreHealth;
+            this.currentStressLvl += currentItem.RestoreHealth * stressMultiplier;
         }
     }
 
@@ -116,10 +137,8 @@ public class playerScript : MonoBehaviour
             if (patient.needSomething)
             {
                 inventory.itemHolder.item = null;
-                
-                patient.CurrentHP++;     //!!!!!!modify hard code!!!!!!
-                this.currentStressLvl--;    //!!!!!modify hard code!!!!!!
-
+                patient.CurrentHP += currentItem.RestoreHealth;
+                this.CurrentStressLvl -= currentItem.RestoreHealth * stressReductionMultiplier;
                 if (patient.CurrentHP >= patient.PatientMaxHp)
                 {
                     FindObjectOfType<GameManager>().removePatientFromList(patient);

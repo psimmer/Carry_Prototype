@@ -9,10 +9,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Scriptable Objects", menuName = "Items/Bandage")]
 public class BandageObj : ItemObject
 {
-    public int restoreHealth { get; set; }
-
     public void Awake()
     {
-        itemType = ItemType.Bandage;
+        ItemType = ItemType.Bandage;
     }
 }
