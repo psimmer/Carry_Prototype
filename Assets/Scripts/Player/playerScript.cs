@@ -48,7 +48,6 @@ public class playerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Patient"))
         {
             collidesWithPatient = true;
-            
         }
     }
     // We lose the connectivity to the item which we was triggering and set itemholder to null
@@ -57,7 +56,6 @@ public class playerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Patient"))
         {
             collidesWithPatient = false;
-            
         }
     }
 

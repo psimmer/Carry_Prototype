@@ -152,11 +152,15 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: patientMaxHP
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
@@ -651,11 +655,15 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: patientMaxHP
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
@@ -2146,11 +2154,15 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: patientMaxHP
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
@@ -3749,11 +3761,15 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: patientMaxHP
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
