@@ -33,18 +33,21 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void RandomPopUp()
     {
-        int randomIndex = Random.Range(0, patients.Count);
-        PatientScript randomPatient = patients[randomIndex];
-
-        if (randomPatient.needSomething == false)
+        if (patients.Count > 0)
         {
-            StartCoroutine("InstantiatePopUp");
-            if (IsTimerOn)
+            int randomIndex = Random.Range(0, patients.Count);
+            PatientScript randomPatient = patients[randomIndex];
+
+            if (randomPatient.needSomething == false)
             {
-                IsTimerOn = false;
-                randomPatient.needSomething = true;
-                randomPatient.currentTask = (Task)Random.Range(0, 2);
-                randomPatient.InstantiatePopUp(randomPatient.currentTask);
+                StartCoroutine("InstantiatePopUp");
+                if (IsTimerOn)
+                {
+                    IsTimerOn = false;
+                    randomPatient.needSomething = true;
+                    randomPatient.currentTask = (Task)Random.Range(0, 2);
+                    randomPatient.InstantiatePopUp(randomPatient.currentTask);
+                }
             }
         }
     }
@@ -78,7 +81,10 @@ public class GameManager : MonoBehaviour
         StopCoroutine("InstantiatePopUp");
     }
 
-   
+    public void removePatientFromList(PatientScript patient)
+    {
+        patients.Remove(patient);
+    }
 
 
 

@@ -31,6 +31,7 @@ public class playerScript : MonoBehaviour
         //Getting the itemType about the Component of the item what we are triggering,
         //and adding the item in our InventorySlot in the InventoryObject.cs
         Item item = other.GetComponent<Item>();
+
         if (Input.GetKey(KeyCode.Space) && item)
         {
             inventory.AddItem(item.item);
@@ -67,19 +68,24 @@ public class playerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
         {                                                       
             patient.DestroyPopUp();
-            patient.needSomething = false;
-            inventory.itemHolder.item = null;
-            // hp things
-            patient.CurrentHP += 1;
-            if (patient.PatientMaxHp > patient.CurrentHP) // patient health + restore health > patientHealth = patient is recovered
+            if (patient.needSomething)
             {
-                Debug.Log($"Current hp: {patient.CurrentHP}");
-            }
-            else if (patient.CurrentHP >= patient.PatientMaxHp)
-            {
-                Debug.Log($"Patient max hp: {patient.PatientMaxHp}");
-                Debug.Log($"Patient Current HP: {patient.CurrentHP}");
-                Debug.Log("Patient is healed");
+                inventory.itemHolder.item = null;
+                
+                patient.CurrentHP += 1;     //modify hard code
+                if (patient.PatientMaxHp > patient.CurrentHP) // patient health + restore health > patientHealth = patient is recovered
+                {
+                    Debug.Log($"Current hp: {patient.CurrentHP}");
+                }
+                else if (patient.CurrentHP >= patient.PatientMaxHp)
+                {
+                    FindObjectOfType<GameManager>().removePatientFromList(patient);
+                    Destroy(obj);
+                    Debug.Log($"Patient max hp: {patient.PatientMaxHp}");
+                    Debug.Log($"Patient Current HP: {patient.CurrentHP}");
+                    Debug.Log("Patient is healed");
+                }
+                patient.needSomething = false;
             }
         }
     }

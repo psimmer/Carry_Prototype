@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRigidbody;
     Transform playerTransform;
     Vector3 maxSpeedVector;
+
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
