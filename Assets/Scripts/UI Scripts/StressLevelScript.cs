@@ -5,11 +5,17 @@ using UnityEngine.UI;
 
 public class StressLevelScript : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
+    [SerializeField] private Slider sliderBar;
     [SerializeField] private Gradient gradient;
     [SerializeField] private Image fill;
     [SerializeField] private AnimationCurve lerpCurve;
     [SerializeField] private float lerpDuration;
+
+    public Slider SliderBar
+    {
+        get { return sliderBar; }
+        set { sliderBar = value; }
+    }
 
     private float timer = 0f;
 
@@ -19,9 +25,9 @@ public class StressLevelScript : MonoBehaviour
         timer += Time.deltaTime;
         
         // For now the Stress Level just fills completly at the start of the game and has no effect.
-        slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, lerpCurve.Evaluate(timer / lerpDuration));
+        sliderBar.value = Mathf.Lerp(sliderBar.minValue, sliderBar.maxValue, lerpCurve.Evaluate(timer / lerpDuration));
 
         // Changes the Color of the Stress Level based on the gradient.
-        fill.color = gradient.Evaluate(slider.normalizedValue);
+        fill.color = gradient.Evaluate(sliderBar.normalizedValue);
     }
 }

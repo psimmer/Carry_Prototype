@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PatientScript patient02;
     [SerializeField] private PatientScript patient03;
     [SerializeField] private PatientScript patient04;
+    [SerializeField] private playerScript player;
 
     private bool IsTimerOn = false;
     private List<PatientScript> patients = new List<PatientScript>();
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         RandomPopUp();
         escPause();
+        player.isStressLvlMax();
     }
     /// <summary>
     /// Spawns a pop up at a random patient

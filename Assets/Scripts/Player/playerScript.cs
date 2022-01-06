@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class playerScript : MonoBehaviour
 {
+    //[SerializeField] private StressLevelScript stressLvlBar;
+    [SerializeField] private float currentStressLvl;
+    [SerializeField] private float maxStressLvl;
+
     public InventoryObject inventory;
     public bool collidesWithPatient { get; set; }
+
+    private void Start()
+    {
+        maxStressLvl = 10f;
+        //stressLvlBar.GetComponent<Slider>().value = 0f;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +25,7 @@ public class playerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Patient"))
         {
             collidesWithPatient = true;
-            //Debug.Log("true");
+            
         }
     }
     // We lose the connectivity to the item which we was triggering and set itemholder to null
@@ -22,7 +34,7 @@ public class playerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Patient"))
         {
             collidesWithPatient = false;
-            //Debug.Log("false");
+            
         }
     }
 
@@ -31,6 +43,7 @@ public class playerScript : MonoBehaviour
         //Getting the itemType about the Component of the item what we are triggering,
         //and adding the item in our InventorySlot in the InventoryObject.cs
         Item item = other.GetComponent<Item>();
+        PatientScript patient = other.GetComponent<PatientScript>();
 
         if (Input.GetKey(KeyCode.Space) && item)
         {
@@ -45,52 +58,93 @@ public class playerScript : MonoBehaviour
                     {                         
                         if(inventory.itemHolder.item.itemType == ItemType.Bandage)
                         {
-                            Treatment(other.gameObject, inventory.itemHolder.item);
-                        }                      
+                            CorrectTreatment(other.gameObject, inventory.itemHolder.item);
+                        }
+                        else
+                        {
+                            WrongTreatment(other.gameObject, inventory.itemHolder.item);
+                        }
                         break;                
                     }
                 case Task.Pill:
                     {
                         if (inventory.itemHolder.item.itemType == ItemType.Pill)
                         {
-                            Treatment(other.gameObject, inventory.itemHolder.item);
+                            CorrectTreatment(other.gameObject, inventory.itemHolder.item);
+                        }
+                        else
+                        {
+                            WrongTreatment(other.gameObject, inventory.itemHolder.item);
                         }
                         break;
                     }
-
             }
         }
     }
 
-    public void Treatment(GameObject obj, ItemObject currentItem)
+    /// <summary>
+    /// Patient loses health, stresslvl of player rises
+    /// </summary>
+    /// <param name="obj">Patient</param>
+    /// <param name="currentItem">currentItem</param>
+    public void WrongTreatment(GameObject obj, ItemObject currentItem) 
+    {
+        PatientScript patient = obj.GetComponent<PatientScript>();
+
+        if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
+        {
+            
+            inventory.itemHolder.item = null;
+            patient.CurrentHP--;        //!!!!!modify hard code!!!!!!
+            this.currentStressLvl+=3;    //!!!!!modify hard code!!!!!!
+            
+        }
+    }
+
+    /// <summary>
+    /// Patient gains health, stresslvl of player decreases
+    /// </summary>
+    /// <param name="obj">Patient</param>
+    /// <param name="currentItem">currentItem</param>
+    public void CorrectTreatment(GameObject obj, ItemObject currentItem)
     {
         PatientScript patient = obj.GetComponent<PatientScript>();
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
         {                                                       
             patient.DestroyPopUp();
+
             if (patient.needSomething)
             {
                 inventory.itemHolder.item = null;
                 
-                patient.CurrentHP += 1;     //modify hard code
-                if (patient.PatientMaxHp > patient.CurrentHP) // patient health + restore health > patientHealth = patient is recovered
-                {
-                    Debug.Log($"Current hp: {patient.CurrentHP}");
-                }
-                else if (patient.CurrentHP >= patient.PatientMaxHp)
+                patient.CurrentHP++;     //!!!!!!modify hard code!!!!!!
+                this.currentStressLvl--;    //!!!!!modify hard code!!!!!!
+
+                if (patient.CurrentHP >= patient.PatientMaxHp)
                 {
                     FindObjectOfType<GameManager>().removePatientFromList(patient);
                     Destroy(obj);
-                    Debug.Log($"Patient max hp: {patient.PatientMaxHp}");
-                    Debug.Log($"Patient Current HP: {patient.CurrentHP}");
-                    Debug.Log("Patient is healed");
                 }
                 patient.needSomething = false;
             }
         }
     }
 
-    // If we end the Application the itemholder set to null
+    /// <summary>
+    /// If Stresslvl is Max, GameOver scene will be loaded
+    /// </summary>
+    public void isStressLvlMax()        
+    {
+        if (this.currentStressLvl >= this.maxStressLvl)
+        {
+            SceneManager.LoadScene("MainMenu");
+            //TODO: Load GameOver Scene
+        }
+    }
+
+    /// <summary>
+    ///  If we end the Application the itemholder set to null
+    /// </summary>
     private void OnApplicationQuit()
     {
         inventory.itemHolder = null;

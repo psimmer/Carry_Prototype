@@ -152,11 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
@@ -651,11 +651,11 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474532ba58be6f8478325fd7aad9d282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 427232013}
+  sliderBar: {fileID: 427232013}
   gradient:
     serializedVersion: 2
     key0: {r: 0.27941167, g: 1, b: 0.25, a: 1}
@@ -1591,6 +1591,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2618188073631541129, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
   m_PrefabInstance: {fileID: 697551804}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &606495096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+  m_PrefabInstance: {fileID: 697551804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606495095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43641557b824396488da417139bda701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &606495098
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1809,6 +1820,18 @@ PrefabInstance:
     - target: {fileID: 2618188073631541129, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: maxStressLvl
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: stressLvlBar
+      value: 
+      objectReference: {fileID: 427232014}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: currentStressLvl
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6133671444424443548, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: m_IsTrigger
@@ -2114,11 +2137,11 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
@@ -3717,11 +3740,11 @@ PrefabInstance:
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minCurrentHp
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
@@ -5400,6 +5423,7 @@ MonoBehaviour:
   patient02: {fileID: 318956349}
   patient03: {fileID: 1461296265}
   patient04: {fileID: 1640565308}
+  player: {fileID: 606495096}
 --- !u!4 &1903867186
 Transform:
   m_ObjectHideFlags: 0
