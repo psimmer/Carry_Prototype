@@ -32,6 +32,13 @@ public class PauseMenuScript : MonoBehaviour
         FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Play();
     }
 
+    //Doesnt work the way i want, so for now the options buttion in the pause menu is disabled
+    //public void OptionsMenu()
+    //{
+    //    SceneManager.LoadScene("OptionsMenu");
+    //}
+
+
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;

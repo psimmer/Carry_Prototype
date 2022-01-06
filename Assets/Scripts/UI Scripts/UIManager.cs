@@ -22,7 +22,14 @@ public class UIManager : MonoBehaviour
         if (Time.timeScale > 0)
         {
             Time.timeScale = 0f;
+            FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        }
+        else
+        {
+            SceneManager.UnloadSceneAsync("PauseMenu");
+            Time.timeScale = 1f;
+            FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Play();
         }
     }
 }
