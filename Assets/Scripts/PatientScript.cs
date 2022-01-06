@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum Task
 {
-    Wound,
-    Pain
+    Bandage,
+    Pill
 }
 
 public class PatientScript : MonoBehaviour
@@ -16,16 +16,26 @@ public class PatientScript : MonoBehaviour
     [SerializeField] private float maxTimeTillTask;
     [SerializeField] private GameObject instantiatedPopUp;
     [SerializeField] public Task currentTask;
+    [SerializeField] private int minCurrentHp;
+    [SerializeField] private int maxCurrentHp;
+    [SerializeField] private int currentHP;
+    private int patientMaxHP = 10;
 
-    //public float PatientHealth { get; set; } <-- need later
+
+
+    public int PatientMaxHp { get { return patientMaxHP; } set { patientMaxHP = value; } }
+    public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
     public bool needSomething { get; set; }
     public float randomTime { get; set; }
+
 
 
     private void Start()
     {
         needSomething = false;
         instantiatedPopUp = null;
+        currentHP = GetRandomHp();
+        //Debug.Log(PatientHealth);
     }
 
     public void InstantiatePopUp(Task currentTask)
@@ -33,12 +43,12 @@ public class PatientScript : MonoBehaviour
         Vector3 patientPos = transform.position;
         switch (currentTask)
         {
-            case Task.Wound:
+            case Task.Bandage:
                 {
                     instantiatedPopUp = Instantiate(bandagePopUp);
                     break;
                 }
-            case Task.Pain:
+            case Task.Pill:
                 {
                     instantiatedPopUp = Instantiate(pillPopUp);
                     break;
@@ -57,6 +67,11 @@ public class PatientScript : MonoBehaviour
         randomTime = Random.Range(minTimeTillTask, maxTimeTillTask);
         return randomTime;
      }
+
+    public int GetRandomHp()
+    {
+        return Random.Range(minCurrentHp, maxCurrentHp);
+    }
 
 
 

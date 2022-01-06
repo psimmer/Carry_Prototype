@@ -13,7 +13,7 @@ public class playerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Patient"))
         {
             collidesWithPatient = true;
-            Debug.Log("true");
+            //Debug.Log("true");
         }
     }
     // We lose the connectivity to the item which we was triggering and set itemholder to null
@@ -22,7 +22,7 @@ public class playerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Patient"))
         {
             collidesWithPatient = false;
-            Debug.Log("false");
+            //Debug.Log("false");
         }
     }
 
@@ -40,19 +40,19 @@ public class playerScript : MonoBehaviour
         {
             switch (other.GetComponent<PatientScript>().currentTask)
             {
-                case Task.Wound:    // For a wound you need Bandage.
+                case Task.Bandage:
                     {                         
                         if(inventory.itemHolder.item.itemType == ItemType.Bandage)
                         {
-                            Treatment(other.gameObject);
+                            Treatment(other.gameObject, inventory.itemHolder.item);
                         }                      
                         break;                
                     }
-                case Task.Pain:     //For Pain you need Pill.
+                case Task.Pill:
                     {
                         if (inventory.itemHolder.item.itemType == ItemType.Pill)
                         {
-                            Treatment(other.gameObject);
+                            Treatment(other.gameObject, inventory.itemHolder.item);
                         }
                         break;
                     }
@@ -61,13 +61,26 @@ public class playerScript : MonoBehaviour
         }
     }
 
-    public void Treatment(GameObject patient)
-    {                                                            
+    public void Treatment(GameObject obj, ItemObject currentItem)
+    {
+        PatientScript patient = obj.GetComponent<PatientScript>();
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
         {                                                       
-            patient.GetComponent<PatientScript>().DestroyPopUp();
-            patient.GetComponent<PatientScript>().needSomething = false;
+            patient.DestroyPopUp();
+            patient.needSomething = false;
             inventory.itemHolder.item = null;
+            // hp things
+            patient.CurrentHP += 1;
+            if (patient.PatientMaxHp > patient.CurrentHP) // patient health + restore health > patientHealth = patient is recovered
+            {
+                Debug.Log($"Current hp: {patient.CurrentHP}");
+            }
+            else if (patient.CurrentHP >= patient.PatientMaxHp)
+            {
+                Debug.Log($"Patient max hp: {patient.PatientMaxHp}");
+                Debug.Log($"Patient Current HP: {patient.CurrentHP}");
+                Debug.Log("Patient is healed");
+            }
         }
     }
 

@@ -6,8 +6,8 @@ public class PopUp : MonoBehaviour
 {
     public enum PopUps
     {
-        Bandages,
-        Pills
+        Bandage,
+        Pill
     }
 
    
