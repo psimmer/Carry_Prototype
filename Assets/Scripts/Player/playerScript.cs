@@ -140,6 +140,7 @@ public class playerScript : MonoBehaviour
                 if (patient.CurrentHP >= patient.PatientMaxHp)
                 {
                     FindObjectOfType<GameManager>().removePatientFromList(patient);
+                    patient.DestroyHealthBar();
                     Destroy(obj);
                 }
                 patient.needSomething = false;

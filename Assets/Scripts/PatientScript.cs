@@ -27,7 +27,10 @@ public class PatientScript : MonoBehaviour
     [SerializeField] private GameObject healthBarPrefab;
     private GameObject healthBar;
     private Slider slider;
+    private Camera cam;
+    private Transform patientTransform;
     private Vector3 healthBarPos;
+    private Vector3 positionDelta;
 
     public int PatientMaxHp { get { return patientMaxHP; } set { patientMaxHP = value; } }
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
@@ -41,6 +44,8 @@ public class PatientScript : MonoBehaviour
         needSomething = false;
         instantiatedPopUp = null;
         currentHP = GetRandomHp();
+        InstantiateHealthBar();
+
     }
 
     private void Update()
@@ -83,14 +88,14 @@ public class PatientScript : MonoBehaviour
         return Random.Range(minCurrentHp, maxCurrentHp);
     }
 
-    //Health Bar:
+
+    //Health Bar stuff:
 
     public void InstantiateHealthBar()
     {
         healthBar = Instantiate(healthBarPrefab);
-        healthBar.transform.SetParent(GameObject.Find("Canvas").transform, false);
-        healthBar.transform.TransformPoint(transform.position);
         slider = healthBar.GetComponent<Slider>();
+        healthBar.transform.SetParent(GameObject.Find("Canvas").transform, false);
         slider.maxValue = PatientMaxHp;
     }
 
@@ -101,9 +106,58 @@ public class PatientScript : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        if(healthBar)
+        if(healthBar) // if healthbar exists on patient (else it will make everything kaput when patients are destroyed)
         {
+            // position healthbar (it will follow the patient) and update the value
+            patientTransform = gameObject.transform;
+            cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+            positionDelta = cam.WorldToScreenPoint(patientTransform.position);
+            healthBarPos = cam.WorldToScreenPoint(new Vector3(patientTransform.position.x + CalculateHealthBarPositionDeltaX(positionDelta.x), patientTransform.position.y + CalculateHealthBarPositionDeltaY(positionDelta.x), patientTransform.position.z));
+            healthBar.transform.position = healthBarPos;
             slider.value = currentHP;
         }
+    }
+
+    // the 2 following functions are for positioning the health bars in the right place. They will only work with our current positioning of patients, and the values were added and tested manually
+    // if you move a patient or the camera in the hierarchy, the values of these 2 functions will have to be redone to avoid overlaping the pop-ups with the health bars (looks bad)
+    private float CalculateHealthBarPositionDeltaX(float screenPosition)
+    {
+        if (screenPosition >= 0 && screenPosition <= 400)
+        {
+            return 0.75f;
+        }
+        if (screenPosition > 400 && screenPosition <= 600)
+        {
+            return 0.8f;
+        }
+        if (screenPosition > 600 && screenPosition <= 800)
+        {
+            return 0.6f;
+        }
+        if (screenPosition > 800 && screenPosition <= 1920)
+        {
+            return 0.7f;
+        }
+        else return 0;
+    }
+    private float CalculateHealthBarPositionDeltaY(float screenPosition)
+    {
+        if (screenPosition >= 0 && screenPosition <= 400)
+        {
+            return 1.1f;
+        }
+        if (screenPosition > 400 && screenPosition <= 600)
+        {
+            return 0.9f;
+        }
+        if (screenPosition > 600 && screenPosition <= 800)
+        {
+            return 0.6f;
+        }
+        if (screenPosition > 800 && screenPosition <= 1920)
+        {
+            return 0.4f;
+        }
+        else return 0;
     }
 }
