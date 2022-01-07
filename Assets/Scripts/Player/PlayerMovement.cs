@@ -59,9 +59,12 @@ public class PlayerMovement : MonoBehaviour
 
         // if the axis input is higher than 0.17 (number pulled out of my ass, but it works nicely)
         // then rotate player in the direction of the input. Without this number, it will start rotating constantly.
-        if (Mathf.Abs(horizontalMovement) > 0.17 || Mathf.Abs(verticalMovement) > 0.17)
+        if (rotation != Vector3.zero)
         {
-            playerTransform.rotation = Quaternion.LookRotation(rotation);
+            if (Mathf.Abs(horizontalMovement) > 0.17 || Mathf.Abs(verticalMovement) > 0.17)
+            {
+                playerTransform.rotation = Quaternion.LookRotation(rotation);
+            }
         }
 
         // check if current velocity is lower than max speed, if so, you can keep adding force 

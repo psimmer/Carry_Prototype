@@ -19,7 +19,7 @@ public class PatientScript : MonoBehaviour
     [SerializeField] private int minCurrentHp;
     [SerializeField] private int maxCurrentHp;
     [SerializeField] private int currentHP;
-    [SerializeField]private int patientMaxHP = 10;
+    [SerializeField] private int patientMaxHP = 10;
 
 
 
