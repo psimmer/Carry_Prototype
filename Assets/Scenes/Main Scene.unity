@@ -223,6 +223,10 @@ PrefabInstance:
       value: Patient03
       objectReference: {fileID: 0}
     - target: {fileID: 7881807149238628900, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881807149238628900, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_TagString
       value: Patient
       objectReference: {fileID: 0}
