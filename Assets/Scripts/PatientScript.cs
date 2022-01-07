@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Task
 {
@@ -19,9 +20,14 @@ public class PatientScript : MonoBehaviour
     [SerializeField] private int minCurrentHp;
     [SerializeField] private int maxCurrentHp;
     [SerializeField] private int currentHP;
-    [SerializeField] private int patientMaxHP = 10;
+    [SerializeField] private int patientMaxHP;
 
 
+    // Health Bar section:
+    [SerializeField] private GameObject healthBarPrefab;
+    private GameObject healthBar;
+    private Slider slider;
+    private Vector3 healthBarPos;
 
     public int PatientMaxHp { get { return patientMaxHP; } set { patientMaxHP = value; } }
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
@@ -35,7 +41,11 @@ public class PatientScript : MonoBehaviour
         needSomething = false;
         instantiatedPopUp = null;
         currentHP = GetRandomHp();
-        //Debug.Log(PatientHealth);
+    }
+
+    private void Update()
+    {
+        UpdateHealthBar();
     }
 
     public void InstantiatePopUp(Task currentTask)
@@ -73,6 +83,27 @@ public class PatientScript : MonoBehaviour
         return Random.Range(minCurrentHp, maxCurrentHp);
     }
 
+    //Health Bar:
 
+    public void InstantiateHealthBar()
+    {
+        healthBar = Instantiate(healthBarPrefab);
+        healthBar.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        healthBar.transform.TransformPoint(transform.position);
+        slider = healthBar.GetComponent<Slider>();
+        slider.maxValue = PatientMaxHp;
+    }
 
+    public void DestroyHealthBar()
+    {
+        Destroy(healthBar);
+    }
+
+    public void UpdateHealthBar()
+    {
+        if(healthBar)
+        {
+            slider.value = currentHP;
+        }
+    }
 }

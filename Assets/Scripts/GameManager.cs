@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         patients.Add(patient02);
         patients.Add(patient03);
         patients.Add(patient04);
+        patient01.InstantiateHealthBar();
         Destroy(GameObject.FindGameObjectWithTag("MenuMusic"));
     }
 
@@ -65,6 +66,6 @@ public class GameManager : MonoBehaviour
         patients.Remove(patient);
     }
 
-
+   
 
 }
