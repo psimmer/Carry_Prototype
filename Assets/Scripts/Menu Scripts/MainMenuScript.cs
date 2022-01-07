@@ -13,7 +13,10 @@ public class MainMenuScript : MonoBehaviour
     private void Awake()
     {
 
-        firstButton.Select();
+        if (firstButton != null)
+        {
+            firstButton.Select();
+        }
     }
 
     /// <summary>

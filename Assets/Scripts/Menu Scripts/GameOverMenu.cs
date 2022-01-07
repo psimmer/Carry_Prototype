@@ -11,8 +11,10 @@ public class GameOverMenu : MonoBehaviour
 
     private void Awake()
     {
-
-        firstButton.Select();
+        if (firstButton != null)
+        {
+            firstButton.Select();
+        }
     }
     public void TryAgain()
     {

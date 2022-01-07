@@ -13,7 +13,10 @@ public class LvlFinishScript : MonoBehaviour
     private void Awake()
     {
 
-        firstButton.Select();
+        if (firstButton != null)
+        {
+            firstButton.Select();
+        }
     }
     public void LeaveFinishMenu()
     {

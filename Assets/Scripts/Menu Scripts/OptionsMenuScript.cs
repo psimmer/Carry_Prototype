@@ -12,7 +12,10 @@ public class OptionsMenuScript : MonoBehaviour
     private void Awake()
     {
 
-        firstButton.Select();
+        if (firstButton != null)
+        {
+            firstButton.Select();
+        }
     }
     public void LeavOptionsMenu()
     {

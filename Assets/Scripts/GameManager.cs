@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +26,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         RandomPopUp();
-        escPause();
+        //escPause();
         player.isStressLvlMax();
     }
     /// <summary>
@@ -53,29 +52,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-    /// <summary>
-    /// using the esc button to open the pause menu
-    /// </summary>
-    public void escPause()
-    {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            if (Time.timeScale > 0)
-            {
-                Time.timeScale = 0f;
-                FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Pause();
-                SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
-            }
-            else
-            {
-                SceneManager.UnloadSceneAsync("PauseMenu");
-                Time.timeScale = 1f;
-                FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Play();
-            }
-        }
-    }
-
+    
     IEnumerator InstantiatePopUp()
     {
         yield return new WaitForSeconds(patient01.GetRandomTime());
