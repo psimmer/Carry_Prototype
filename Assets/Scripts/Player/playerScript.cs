@@ -154,8 +154,8 @@ public class playerScript : MonoBehaviour
     {
         if (this.currentStressLvl >= this.maxStressLvl)
         {
-            SceneManager.LoadScene("MainMenu");
-            //TODO: Load GameOver Scene
+            //TODO: reset all stats
+            SceneManager.LoadScene("GameOver");
         }
     }
 

@@ -164,11 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -667,11 +667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -1840,7 +1840,7 @@ PrefabInstance:
       objectReference: {fileID: 427232014}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: currentStressLvl
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: stressMultiplier
@@ -2166,11 +2166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -3773,11 +3773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxTimeTillTask
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
