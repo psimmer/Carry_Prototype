@@ -150,7 +150,6 @@ public class playerScript : MonoBehaviour
                     patient.DestroyHealthBar();
                     Destroy(obj);
                 }
-                patient.needSomething = false;
             }
         }
     }

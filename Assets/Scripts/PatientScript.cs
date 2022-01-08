@@ -38,10 +38,9 @@ public class PatientScript : MonoBehaviour
     public float randomTime { get; set; }
 
 
-
     private void Start()
     {
-        needSomething = false;
+        //needSomething = false;
         instantiatedPopUp = null;
         currentHP = GetRandomHp();
         InstantiateHealthBar();
@@ -74,7 +73,11 @@ public class PatientScript : MonoBehaviour
 
     public void DestroyPopUp()
     {
-        Destroy(instantiatedPopUp);
+        if (instantiatedPopUp != null)
+        {
+            needSomething = false;
+            Destroy(instantiatedPopUp);
+        }
     }
 
     public float GetRandomTime()
