@@ -43,7 +43,6 @@ public class PatientScript : MonoBehaviour
         instantiatedPopUp = null;
         currentHP = GetRandomHp();
         InstantiateHealthBar();
-
     }
 
     private void Update()
@@ -166,10 +165,9 @@ public class PatientScript : MonoBehaviour
         else return 0;
     }
 
-    public IEnumerator SpawnParticles(GameObject particles, float duration)
+    public void SpawnParticles(GameObject particles, float duration)
     {
-        Instantiate(particles, patientTransform);
-        yield return new WaitForSeconds(duration);
-        Destroy(particles);
+        GameObject newParticles = Instantiate(particles, patientTransform);
+        Destroy(newParticles, duration);
     }
 }
