@@ -135,22 +135,20 @@ public class playerScript : MonoBehaviour
     public void CorrectTreatment(GameObject obj, ItemObject currentItem)
     {
         PatientScript patient = obj.GetComponent<PatientScript>();
-        if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
+        if (Input.GetKey(KeyCode.Space) && collidesWithPatient && patient.needSomething)
         {                                                       
             patient.DestroyPopUp();
-
-            if (patient.needSomething)
+            inventory.itemHolder.item = null;
+            patient.CurrentHP += currentItem.RestoreHealth;
+            this.CurrentStressLvl -= currentItem.RestoreHealth * stressReductionMultiplier;
+            if (patient.CurrentHP >= patient.PatientMaxHp)
             {
-                inventory.itemHolder.item = null;
-                patient.CurrentHP += currentItem.RestoreHealth;
-                this.CurrentStressLvl -= currentItem.RestoreHealth * stressReductionMultiplier;
-                if (patient.CurrentHP >= patient.PatientMaxHp)
-                {
-                    FindObjectOfType<GameManager>().removePatientFromList(patient);
-                    patient.DestroyHealthBar();
-                    Destroy(obj);
-                }
+                FindObjectOfType<GameManager>().removePatientFromList(patient);
+                patient.DestroyHealthBar();
+                Destroy(obj);
+                
             }
+            
         }
     }
 

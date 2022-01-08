@@ -96,9 +96,10 @@ public class PatientScript : MonoBehaviour
 
     public void InstantiateHealthBar()
     {
-        healthBar = Instantiate(healthBarPrefab);
+        healthBar = Instantiate(healthBarPrefab, patientTransform);
         slider = healthBar.GetComponent<Slider>();
         healthBar.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        healthBar.transform.SetAsFirstSibling();
         slider.maxValue = PatientMaxHp;
     }
 
@@ -115,7 +116,9 @@ public class PatientScript : MonoBehaviour
             patientTransform = gameObject.transform;
             cam = GameObject.Find("Main Camera").GetComponent<Camera>();
             positionDelta = cam.WorldToScreenPoint(patientTransform.position);
-            healthBarPos = cam.WorldToScreenPoint(new Vector3(patientTransform.position.x + CalculateHealthBarPositionDeltaX(positionDelta.x), patientTransform.position.y + CalculateHealthBarPositionDeltaY(positionDelta.x), patientTransform.position.z));
+            healthBarPos = cam.WorldToScreenPoint(new Vector3(patientTransform.position.x + 
+                CalculateHealthBarPositionDeltaX(positionDelta.x), patientTransform.position.y + 
+                CalculateHealthBarPositionDeltaY(positionDelta.x), patientTransform.position.z));
             healthBar.transform.position = healthBarPos;
             slider.value = currentHP;
         }

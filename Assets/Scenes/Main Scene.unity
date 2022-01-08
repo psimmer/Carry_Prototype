@@ -4503,7 +4503,7 @@ MonoBehaviour:
   quitToMainMenuButton: {fileID: 891072302}
   optionsButton: {fileID: 190259880}
   exitGameButton: {fileID: 1555008818}
-  light: {fileID: 2083831547}
+  myLight: {fileID: 2083831547}
 --- !u!4 &1317586891
 Transform:
   m_ObjectHideFlags: 0
@@ -5407,7 +5407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551800938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.3764133, y: -1.6149145, z: -7.3647194}
+  m_LocalPosition: {x: -4.3764133, y: -1.614915, z: -7.3647194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1345693638}

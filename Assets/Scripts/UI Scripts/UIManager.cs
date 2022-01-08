@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button quitToMainMenuButton;
     [SerializeField] private Button optionsButton;        
     [SerializeField] private Button exitGameButton;
-    [SerializeField] private Light light;
+    [SerializeField] private Light myLight;
 
     public float TimeLeft
     {
@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
         if (Time.timeScale > 0)
         {
             Time.timeScale = 0f;
-            light.type = LightType.Spot;
+            myLight.type = LightType.Spot;
 
             pauseText.GetComponent<Transform>().gameObject.SetActive(true);
             continueButton.GetComponent<Transform>().gameObject.SetActive(true);
@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
             exitGameButton.GetComponent<Transform>().gameObject.SetActive(false);
 
             Time.timeScale = 1f;
-            light.type = LightType.Directional;
+            myLight.type = LightType.Directional;
             FindObjectOfType<AudioSource>().GetComponent<AudioSource>().Play();
         }
     }
