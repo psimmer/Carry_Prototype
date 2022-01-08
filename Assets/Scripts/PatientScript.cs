@@ -22,7 +22,6 @@ public class PatientScript : MonoBehaviour
     [SerializeField] private int currentHP;
     [SerializeField] private int patientMaxHP;
 
-
     // Health Bar section:
     [SerializeField] private GameObject healthBarPrefab;
     private GameObject healthBar;
@@ -165,5 +164,12 @@ public class PatientScript : MonoBehaviour
             return 0.4f;
         }
         else return 0;
+    }
+
+    public IEnumerator SpawnParticles(GameObject particles, float duration)
+    {
+        Instantiate(particles, patientTransform);
+        yield return new WaitForSeconds(duration);
+        Destroy(particles);
     }
 }

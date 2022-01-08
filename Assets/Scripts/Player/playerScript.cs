@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class playerScript : MonoBehaviour
 {
+    // Particles:
+    [SerializeField] private GameObject healingParticles;
+    [SerializeField] private GameObject fullHealingParticles;
+    [SerializeField] private float particlesDuration;
+
     //[SerializeField] private StressLevelScript stressLvlBar;
     [SerializeField] private float currentStressLvl;
     [SerializeField] private float maxStressLvl;
@@ -136,17 +141,18 @@ public class playerScript : MonoBehaviour
     {
         PatientScript patient = obj.GetComponent<PatientScript>();
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient && patient.needSomething)
-        {                                                       
+        {
+            StartCoroutine(patient.SpawnParticles(healingParticles, particlesDuration));
             patient.DestroyPopUp();
             inventory.itemHolder.item = null;
             patient.CurrentHP += currentItem.RestoreHealth;
             this.CurrentStressLvl -= currentItem.RestoreHealth * stressReductionMultiplier;
             if (patient.CurrentHP >= patient.PatientMaxHp)
             {
+                StartCoroutine(patient.SpawnParticles(fullHealingParticles, particlesDuration));
                 FindObjectOfType<GameManager>().removePatientFromList(patient);
                 patient.DestroyHealthBar();
                 Destroy(obj);
-                
             }
             
         }

@@ -2644,9 +2644,25 @@ PrefabInstance:
       value: 12.66
       objectReference: {fileID: 0}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: healingParticles
+      value: 
+      objectReference: {fileID: 5048721385892816507, guid: 172cc0eeeb0c10e4289ade386f0b8dcd, type: 3}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: stressMultiplier
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: particlesDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: fullHealingParticles
+      value: 
+      objectReference: {fileID: 1733461010763677177, guid: d02a7699f5599644196f4b5d4e1d90f7, type: 3}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: fullhealingParticles
+      value: 
+      objectReference: {fileID: 6152059828057558394, guid: d02a7699f5599644196f4b5d4e1d90f7, type: 3}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: stressReductionMultiplier
       value: 1
