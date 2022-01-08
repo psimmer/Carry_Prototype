@@ -117,6 +117,13 @@ public class playerScript : MonoBehaviour
             inventory.itemHolder.item = null;
             patient.CurrentHP -= currentItem.RestoreHealth;
             this.currentStressLvl += currentItem.RestoreHealth * stressMultiplier;
+            if(patient.CurrentHP <= 0)
+            {
+                FindObjectOfType<GameManager>().removePatientFromList(patient);
+                patient.DestroyHealthBar();
+                patient.DestroyPopUp();
+                Destroy(obj);
+            }
         }
     }
 
