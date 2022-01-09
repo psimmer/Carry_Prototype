@@ -178,6 +178,10 @@ public class PatientScript : MonoBehaviour
         {
             current += 0.05f;
         }
+        if(newHp < current)
+        {
+            current -= 0.05f;
+        }
         return current;
     }
 
