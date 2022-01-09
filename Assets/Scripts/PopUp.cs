@@ -10,6 +10,7 @@ public class PopUp : MonoBehaviour
     [SerializeField] private float interpolationPoint = 0f;
     [SerializeField] private Image radialBarImg;
     [SerializeField] private float speed;
+    [SerializeField] private PatientScript patient;
     public float CurrentFillAmount { get; private set; }
 
     private void Awake()
@@ -26,17 +27,18 @@ public class PopUp : MonoBehaviour
         radialBarImg.fillAmount = Mathf.Lerp(maxValue, minValue, interpolationPoint);
         interpolationPoint += Time.deltaTime * speed;
         CurrentFillAmount = radialBarImg.fillAmount;
+        TimeOut();
     }
 
     public void TimeOut()
     {
-        PatientScript patient = GetComponent<PatientScript>();
-
         if (CurrentFillAmount <= 0)
         {
-            patient.CurrentHP -= 2;
-            Destroy(this.gameObject);
+            patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
+            patient.CurrentHP -= 5;
+            patient.DestroyPopUp();
         }
+
         //else if(patient.CurrentHP <= 0)
         //{
         //    Destroy(patient);

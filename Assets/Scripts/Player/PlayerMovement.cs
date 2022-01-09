@@ -50,7 +50,10 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalMovement = 1f;
         }
-
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            playerMovementSpeed += 10000;
+        }
 
 
         Vector3 movement = new Vector3(horizontalMovement, 0f, verticalMovement);

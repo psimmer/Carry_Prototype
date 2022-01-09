@@ -70,6 +70,7 @@ public class PatientScript : MonoBehaviour
                 }
         }
         instantiatedPopUp.transform.position = new Vector3(patientPos.x, patientPos.y + 1.5f, patientPos.z);
+        instantiatedPopUp.transform.SetParent(patientTransform);
         //instantiatedPopUp.transform.SetParent(GameObject.Find("Canvas").transform, false);
     }
 
