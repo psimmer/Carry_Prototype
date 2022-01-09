@@ -45,7 +45,7 @@ public class PatientScript : MonoBehaviour
         InstantiateHealthBar();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         UpdateHealthBar();
     }
@@ -115,8 +115,8 @@ public class PatientScript : MonoBehaviour
             cam = GameObject.Find("Main Camera").GetComponent<Camera>();
             positionDelta = cam.WorldToScreenPoint(patientTransform.position);
             healthBarPos = cam.WorldToScreenPoint(new Vector3(patientTransform.position.x + 
-                CalculateHealthBarPositionDeltaX(positionDelta.x), patientTransform.position.y + 
-                CalculateHealthBarPositionDeltaY(positionDelta.x), patientTransform.position.z));
+                CalculateHealthBarDeltaX(positionDelta.x), patientTransform.position.y + 
+                CalculateHealthBarDeltaY(positionDelta.x), patientTransform.position.z));
             healthBar.transform.position = healthBarPos;
             slider.value = currentHP;
         }
@@ -124,7 +124,7 @@ public class PatientScript : MonoBehaviour
 
     // the 2 following functions are for positioning the health bars in the right place. They will only work with our current positioning of patients, and the values were added and tested manually
     // if you move a patient or the camera in the hierarchy, the values of these 2 functions will have to be redone to avoid overlaping the pop-ups with the health bars (looks bad)
-    private float CalculateHealthBarPositionDeltaX(float screenPosition)
+    private float CalculateHealthBarDeltaX(float screenPosition)
     {
         if (screenPosition >= 0 && screenPosition <= 400)
         {
@@ -144,7 +144,7 @@ public class PatientScript : MonoBehaviour
         }
         else return 0;
     }
-    private float CalculateHealthBarPositionDeltaY(float screenPosition)
+    private float CalculateHealthBarDeltaY(float screenPosition)
     {
         if (screenPosition >= 0 && screenPosition <= 400)
         {
