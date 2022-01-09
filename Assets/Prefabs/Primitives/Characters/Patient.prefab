@@ -2708,6 +2708,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012edd1bb41e85f47a63e9846b6e4e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bandagePopUp: {fileID: 5327192451142887213, guid: 84ad9650f76a78948ab9360fefc0de40, type: 3}
+  pillPopUp: {fileID: 2907019273173606175, guid: 4ab13b1f63dc6fe4696e49b6c0ecacc1, type: 3}
+  minTimeTillTask: 0
+  maxTimeTillTask: 0
+  instantiatedPopUp: {fileID: 0}
+  currentTask: 0
+  minCurrentHp: 0
+  maxCurrentHp: 0
+  currentHP: 0
+  patientMaxHP: 0
+  healthBarPrefab: {fileID: 0}
 --- !u!1 &7927236269272520591
 GameObject:
   m_ObjectHideFlags: 0

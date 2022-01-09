@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DisplayPopUp : MonoBehaviour
 {
-    [SerializeField] private GameObject cam;
+    private GameObject cam;
 
     private void Awake()
     {

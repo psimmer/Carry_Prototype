@@ -27,7 +27,6 @@ public class DayCycleScript : MonoBehaviour
     public void LerpStart()
     {
         transform.rotation = Quaternion.Lerp(dayStart, dayEnd, Time.timeSinceLevelLoad * (speed / (6 * 6)));
-
     }
 
 }

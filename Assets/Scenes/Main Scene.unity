@@ -145,11 +145,11 @@ PrefabInstance:
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: pillPopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+      objectReference: {fileID: 6443529871023231588, guid: cee72d2bde6b62044bc7250694323bae, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: bandagePopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+      objectReference: {fileID: 4765618169539640222, guid: a001ee5b92b64034187ab7b51e05ca4e, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
       value: 10
@@ -163,6 +163,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: damageParticles
+      value: 
+      objectReference: {fileID: 1547498293661416764, guid: c15b5077315498b4ca930299472479f7, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: healthBarPrefab
       value: 
       objectReference: {fileID: 2824313177166599990, guid: f0dc0ae86a86a0c4c82fa015250d4c46, type: 3}
@@ -173,6 +177,10 @@ PrefabInstance:
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: particlesDuration
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -650,17 +658,21 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: popUp
+      value: 
+      objectReference: {fileID: 2325009892537760199, guid: d3535d24bb8285444a8c5fbfcd78beaf, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: myPopUp
       value: 
       objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: pillPopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+      objectReference: {fileID: 6443529871023231588, guid: cee72d2bde6b62044bc7250694323bae, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: bandagePopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+      objectReference: {fileID: 4765618169539640222, guid: a001ee5b92b64034187ab7b51e05ca4e, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
       value: 10
@@ -674,6 +686,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: damageParticles
+      value: 
+      objectReference: {fileID: 1547498293661416764, guid: c15b5077315498b4ca930299472479f7, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: healthBarPrefab
       value: 
       objectReference: {fileID: 2824313177166599990, guid: f0dc0ae86a86a0c4c82fa015250d4c46, type: 3}
@@ -684,6 +700,10 @@ PrefabInstance:
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: particlesDuration
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -3105,11 +3125,11 @@ PrefabInstance:
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: pillPopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+      objectReference: {fileID: 6443529871023231588, guid: cee72d2bde6b62044bc7250694323bae, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: bandagePopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+      objectReference: {fileID: 4765618169539640222, guid: a001ee5b92b64034187ab7b51e05ca4e, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
       value: 10
@@ -3123,6 +3143,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: damageParticles
+      value: 
+      objectReference: {fileID: 1547498293661416764, guid: c15b5077315498b4ca930299472479f7, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: healthBarPrefab
       value: 
       objectReference: {fileID: 2824313177166599990, guid: f0dc0ae86a86a0c4c82fa015250d4c46, type: 3}
@@ -3133,6 +3157,10 @@ PrefabInstance:
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: particlesDuration
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder
@@ -4858,11 +4886,11 @@ PrefabInstance:
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: pillPopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: 30145d276e7668e4cb095d4e7cb37436, type: 3}
+      objectReference: {fileID: 6443529871023231588, guid: cee72d2bde6b62044bc7250694323bae, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: bandagePopUp
       value: 
-      objectReference: {fileID: 7729929771299593184, guid: e2084890551b2ae49805ee6eec98d8b9, type: 3}
+      objectReference: {fileID: 4765618169539640222, guid: a001ee5b92b64034187ab7b51e05ca4e, type: 3}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: maxCurrentHp
       value: 10
@@ -4876,6 +4904,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: damageParticles
+      value: 
+      objectReference: {fileID: 1547498293661416764, guid: c15b5077315498b4ca930299472479f7, type: 3}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: healthBarPrefab
       value: 
       objectReference: {fileID: 2824313177166599990, guid: f0dc0ae86a86a0c4c82fa015250d4c46, type: 3}
@@ -4886,6 +4918,10 @@ PrefabInstance:
     - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: minTimeTillTask
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232361710082292968, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
+      propertyPath: particlesDuration
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_RootOrder

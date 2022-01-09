@@ -11,6 +11,8 @@ public enum Task
 
 public class PatientScript : MonoBehaviour
 {
+    [SerializeField] private GameObject damageParticles;
+    [SerializeField] private float particlesDuration;
     [SerializeField] private GameObject bandagePopUp;
     [SerializeField] private GameObject pillPopUp;
     [SerializeField] private float minTimeTillTask;
@@ -47,6 +49,7 @@ public class PatientScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //RadialBarState();
         UpdateHealthBar();
     }
 
@@ -67,6 +70,7 @@ public class PatientScript : MonoBehaviour
                 }
         }
         instantiatedPopUp.transform.position = new Vector3(patientPos.x, patientPos.y + 1.5f, patientPos.z);
+        //instantiatedPopUp.transform.SetParent(GameObject.Find("Canvas").transform, false);
     }
 
     public void DestroyPopUp()
@@ -170,4 +174,8 @@ public class PatientScript : MonoBehaviour
         GameObject newParticles = Instantiate(particles, patientTransform);
         Destroy(newParticles, duration);
     }
+
+    
+
+
 }
