@@ -2640,6 +2640,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 427232014}
     - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 8751646875999502831, guid: 3494edaf403e6c744bca1b48b50dd7c4, type: 3}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
+      propertyPath: damageParticles
+      value: 
+      objectReference: {fileID: 1547498293661416764, guid: c15b5077315498b4ca930299472479f7, type: 3}
+    - target: {fileID: 4455764941572844300, guid: b10c22b8aa2863a40a86820702fb5bfb, type: 3}
       propertyPath: currentStressLvl
       value: 12.66
       objectReference: {fileID: 0}

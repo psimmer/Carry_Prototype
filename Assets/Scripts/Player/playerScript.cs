@@ -9,6 +9,8 @@ public class playerScript : MonoBehaviour
     // Particles:
     [SerializeField] private GameObject healingParticles;
     [SerializeField] private GameObject fullHealingParticles;
+    [SerializeField] private GameObject damageParticles;
+    [SerializeField] private GameObject deathParticles;
     [SerializeField] private float particlesDuration;
 
     //[SerializeField] private StressLevelScript stressLvlBar;
@@ -119,15 +121,17 @@ public class playerScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
         {
+            patient.SpawnParticles(damageParticles, particlesDuration);
             inventory.itemHolder.item = null;
             patient.CurrentHP -= currentItem.RestoreHealth;
             this.currentStressLvl += currentItem.RestoreHealth * stressMultiplier;
             if(patient.CurrentHP <= 0)
             {
+                patient.SpawnParticles(deathParticles, particlesDuration);
                 FindObjectOfType<GameManager>().removePatientFromList(patient);
                 patient.DestroyHealthBar();
                 patient.DestroyPopUp();
-                Destroy(obj);
+                Destroy(obj, particlesDuration);
             }
         }
     }
@@ -152,7 +156,7 @@ public class playerScript : MonoBehaviour
                 patient.SpawnParticles(fullHealingParticles, particlesDuration);
                 FindObjectOfType<GameManager>().removePatientFromList(patient);
                 patient.DestroyHealthBar();
-                Destroy(obj, 3);
+                Destroy(obj, particlesDuration);
             }
             
         }
