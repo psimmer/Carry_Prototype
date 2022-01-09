@@ -83,10 +83,10 @@ public class PatientScript : MonoBehaviour
     }
 
     public float GetRandomTime()
-     {
+    {
         randomTime = Random.Range(minTimeTillTask, maxTimeTillTask);
         return randomTime;
-     }
+    }
 
     public int GetRandomHp()
     {
@@ -103,6 +103,7 @@ public class PatientScript : MonoBehaviour
         healthBar.transform.SetParent(GameObject.Find("Canvas").transform, false);
         healthBar.transform.SetAsFirstSibling();
         slider.maxValue = PatientMaxHp;
+        slider.value = currentHP;
     }
 
     public void DestroyHealthBar()
@@ -112,17 +113,19 @@ public class PatientScript : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        if(healthBar) // if healthbar exists on patient (else it will make everything kaput when patients are destroyed)
+        if (healthBar) // if healthbar exists on patient (else it will make everything kaput when patients are destroyed)
         {
             // position healthbar (it will follow the patient) and update the value
             patientTransform = gameObject.transform;
             cam = GameObject.Find("Main Camera").GetComponent<Camera>();
             positionDelta = cam.WorldToScreenPoint(patientTransform.position);
-            healthBarPos = cam.WorldToScreenPoint(new Vector3(patientTransform.position.x + 
-                CalculateHealthBarDeltaX(positionDelta.x), patientTransform.position.y + 
+            healthBarPos = cam.WorldToScreenPoint(new Vector3(patientTransform.position.x +
+                CalculateHealthBarDeltaX(positionDelta.x), patientTransform.position.y +
                 CalculateHealthBarDeltaY(positionDelta.x), patientTransform.position.z));
             healthBar.transform.position = healthBarPos;
-            slider.value = currentHP;
+            slider.value = LerpHealthBar(slider.value, currentHP);
+
+            //slider.value = currentHP;
         }
     }
 
@@ -169,13 +172,23 @@ public class PatientScript : MonoBehaviour
         else return 0;
     }
 
+    private float LerpHealthBar(float current, float newHp)
+    {
+        if(newHp > current)
+        {
+            current += 0.05f;
+        }
+        return current;
+    }
+
+
     public void SpawnParticles(GameObject particles, float duration)
     {
         GameObject newParticles = Instantiate(particles, patientTransform);
         Destroy(newParticles, duration);
     }
 
-    
+
 
 
 }
