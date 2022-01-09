@@ -26,10 +26,8 @@ public class DayCycleScript : MonoBehaviour
 
     public void LerpStart()
     {
-        transform.rotation = Quaternion.Lerp(dayStart, dayEnd, Time.time * (speed / (6 * 6)));
-        //Debug.Log((int)Time.time);
-        Debug.Log("Hello i am the sun and i dont know why i am still rotating in the menu scene");
-        //Debug.Log(transform.rotation);
+        transform.rotation = Quaternion.Lerp(dayStart, dayEnd, Time.timeSinceLevelLoad * (speed / (6 * 6)));
+
     }
 
 }
