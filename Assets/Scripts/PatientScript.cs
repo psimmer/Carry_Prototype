@@ -55,6 +55,7 @@ public class PatientScript : MonoBehaviour
 
     public void InstantiatePopUp(Task currentTask)
     {
+
         Vector3 patientPos = transform.position;
         switch (currentTask)
         {

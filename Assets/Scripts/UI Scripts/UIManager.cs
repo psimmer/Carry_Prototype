@@ -80,6 +80,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void SaveAndQuit()
+    {
+        SaveSystem.SavePlayer(FindObjectOfType<playerScript>());
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;

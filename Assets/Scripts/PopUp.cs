@@ -37,12 +37,12 @@ public class PopUp : MonoBehaviour
             patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
             patient.CurrentHP -= 5;
             patient.DestroyPopUp();
-            if (patient.CurrentHP <= 0)
-            {
-                Destroy(patient.gameObject);
-                patient.DestroyHealthBar();
-                //TODO: implement particles
-            }
+            //if (patient.CurrentHP <= 0)
+            //{
+            //    Destroy(patient.gameObject);
+            //    patient.DestroyHealthBar();
+            //    //TODO: implement particles
+            //}
             
         }
 

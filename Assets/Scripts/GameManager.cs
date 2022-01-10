@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //if (File.Exists(Application.persistentDataPath + "/player.carry"))
+        //{
+        //    player.transform.position = GlobalData.instance.currentPlayerPosition;
+        //    player.CurrentStressLvl = GlobalData.instance.currentStresslvl;
+        //    //player.inventory.itemHolder.item.ItemType = (ItemType)GlobalData.instance.currentItem;
+
+        //}
         patients.Add(patient01);
         patients.Add(patient02);
         patients.Add(patient03);
