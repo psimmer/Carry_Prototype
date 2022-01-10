@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
             int randomIndex = Random.Range(0, patients.Count);
             PatientScript randomPatient = patients[randomIndex];
 
-            if (randomPatient.needSomething == false)
+            if (randomPatient.InstantiatedPopUp == null && randomPatient.needSomething == false)
             {
                 StartCoroutine("InstantiatePopUp");
                 if (IsTimerOn)
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     
     IEnumerator InstantiatePopUp()
     {
-        yield return new WaitForSeconds(patient01.GetRandomTime());
+        yield return new WaitForSeconds(Random.Range(6,8));
         IsTimerOn = true;
         StopCoroutine("InstantiatePopUp");
     }

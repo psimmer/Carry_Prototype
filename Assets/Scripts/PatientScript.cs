@@ -15,8 +15,6 @@ public class PatientScript : MonoBehaviour
     [SerializeField] private float particlesDuration;
     [SerializeField] private GameObject bandagePopUp;
     [SerializeField] private GameObject pillPopUp;
-    [SerializeField] private float minTimeTillTask;
-    [SerializeField] private float maxTimeTillTask;
     [SerializeField] private GameObject instantiatedPopUp;
     [SerializeField] public Task currentTask;
     [SerializeField] private int minCurrentHp;
@@ -32,7 +30,7 @@ public class PatientScript : MonoBehaviour
     private Transform patientTransform;
     private Vector3 healthBarPos;
     private Vector3 positionDelta;
-
+    public GameObject InstantiatedPopUp { get { return instantiatedPopUp; } set { instantiatedPopUp = value; }  }
     public int PatientMaxHp { get { return patientMaxHP; } set { patientMaxHP = value; } }
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
     public bool needSomething { get; set; }
@@ -84,11 +82,11 @@ public class PatientScript : MonoBehaviour
         }
     }
 
-    public float GetRandomTime()
-    {
-        randomTime = Random.Range(minTimeTillTask, maxTimeTillTask);
-        return randomTime;
-    }
+    //public float GetRandomTime()
+    //{
+    //    randomTime = Random.Range(minTimeTillTask, maxTimeTillTask);
+    //    return randomTime;
+    //}
 
     public int GetRandomHp()
     {
