@@ -91,6 +91,7 @@ MonoBehaviour:
   interpolationPoint: 0
   radialBarImg: {fileID: 7679435976365058418}
   speed: 0.1
+  patient: {fileID: 0}
 --- !u!1 &2325009892537760199
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4233958760227929196
 MonoBehaviour:
   m_ObjectHideFlags: 0
