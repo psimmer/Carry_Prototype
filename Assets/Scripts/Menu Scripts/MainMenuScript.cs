@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour
 {
 
     [SerializeField] Button firstButton;
+    [SerializeField] Button loadButton;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class MainMenuScript : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Main Scene");
     }
 
@@ -42,10 +44,10 @@ public class MainMenuScript : MonoBehaviour
     public void LoadSaveFile()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-
         if (data != null)
         {
             //Debug.Log("currentStresslvl: " + data.currentStressLvl);
+            GlobalData.instance.isSaveFileLoaded = true;
 
             GlobalData.instance.currentStresslvl = data.currentStressLvl;
             GlobalData.instance.currentItem = data.currentItem;

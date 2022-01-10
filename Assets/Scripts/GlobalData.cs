@@ -9,6 +9,9 @@ public class GlobalData : MonoBehaviour
     public float currentStresslvl;
     public int currentItem;
     public Vector3 currentPlayerPosition;
+    public bool isSaveFileLoaded = false;
+    public float timeLeft;
+    
     
 
     private void Awake()

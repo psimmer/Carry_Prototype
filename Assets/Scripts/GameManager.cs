@@ -17,13 +17,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //if (File.Exists(Application.persistentDataPath + "/player.carry"))
-        //{
-        //    player.transform.position = GlobalData.instance.currentPlayerPosition;
-        //    player.CurrentStressLvl = GlobalData.instance.currentStresslvl;
-        //    //player.inventory.itemHolder.item.ItemType = (ItemType)GlobalData.instance.currentItem;
 
-        //}
+        if (GlobalData.instance.isSaveFileLoaded && GlobalData.instance != null)
+        {
+            Time.timeScale = 1f;
+            player.transform.position = GlobalData.instance.currentPlayerPosition;
+            player.CurrentStressLvl = GlobalData.instance.currentStresslvl;
+            //player.inventory.itemHolder.item.ItemType = (ItemType)GlobalData.instance.currentItem;
+            GlobalData.instance.isSaveFileLoaded = false;
+
+        }
+
         patients.Add(patient01);
         patients.Add(patient02);
         patients.Add(patient03);

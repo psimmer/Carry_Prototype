@@ -9,8 +9,17 @@ public class TimerScript : MonoBehaviour
     [SerializeField] private Text timerText;
     [SerializeField] private UIManager UIManager;
 
+    private void Start()
+    {
+        if (GlobalData.instance.isSaveFileLoaded && GlobalData.instance != null)
+        {
+            UIManager.TimeLeft = GlobalData.instance.timeLeft;
+        }
+    }
+
     void Update()
     {
+        
         // Countdown every second until 0 is reached.
         if (UIManager.TimeLeft >= 0)
         {
@@ -24,6 +33,10 @@ public class TimerScript : MonoBehaviour
             }
 
             UIManager.TimeLeft -= Time.deltaTime;
+            if (GlobalData.instance != null)
+            {
+                GlobalData.instance.timeLeft = UIManager.TimeLeft;
+            }
         }
         else
         {

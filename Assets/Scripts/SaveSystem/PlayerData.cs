@@ -9,8 +9,9 @@ public class PlayerData
     public float currentStressLvl;
     public int currentItem;
     public float[] position;
+    public float timeLeft;
 
-    public PlayerData(playerScript player)
+    public PlayerData(playerScript player, float _timeLeft)
     {
         currentStressLvl = player.CurrentStressLvl;
         //if (player.inventory != null)
@@ -26,5 +27,7 @@ public class PlayerData
         position[0] = player.transform.position.x;
         position[1] = player.transform.position.y;
         position[2] = player.transform.position.z;
+
+        timeLeft = _timeLeft;
     }
 }

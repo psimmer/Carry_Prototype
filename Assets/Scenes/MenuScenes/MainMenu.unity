@@ -396,6 +396,7 @@ MonoBehaviour:
   currentStresslvl: 0
   currentItem: 0
   currentPlayerPosition: {x: 0, y: 0, z: 0}
+  isSaveFileLoaded: 0
 --- !u!4 &642548868
 Transform:
   m_ObjectHideFlags: 0
@@ -792,6 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstButton: {fileID: 2117606483}
+  loadButton: {fileID: 1203676244}
 --- !u!1 &864071918
 GameObject:
   m_ObjectHideFlags: 0

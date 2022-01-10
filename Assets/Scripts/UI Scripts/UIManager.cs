@@ -82,13 +82,14 @@ public class UIManager : MonoBehaviour
 
     public void SaveAndQuit()
     {
-        SaveSystem.SavePlayer(FindObjectOfType<playerScript>());
+        SaveSystem.SavePlayer(FindObjectOfType<playerScript>(), GlobalData.instance.timeLeft);
         SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
+        GlobalData.instance.isSaveFileLoaded = false;
         SceneManager.LoadScene("MainMenu");
     }
 
