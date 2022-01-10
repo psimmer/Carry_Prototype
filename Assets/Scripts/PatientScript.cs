@@ -11,6 +11,8 @@ public enum Task
 
 public class PatientScript : MonoBehaviour
 {
+    [SerializeField] private GameObject deathParticles;
+
     [SerializeField] private GameObject damageParticles;
     [SerializeField] private float particlesDuration;
     [SerializeField] private GameObject bandagePopUp;
@@ -21,7 +23,6 @@ public class PatientScript : MonoBehaviour
     [SerializeField] private int maxCurrentHp;
     [SerializeField] private int currentHP;
     [SerializeField] private int patientMaxHP;
-
     // Health Bar section:
     [SerializeField] private GameObject healthBarPrefab;
     private GameObject healthBar;
@@ -30,6 +31,7 @@ public class PatientScript : MonoBehaviour
     private Transform patientTransform;
     private Vector3 healthBarPos;
     private Vector3 positionDelta;
+   
     public GameObject InstantiatedPopUp { get { return instantiatedPopUp; } set { instantiatedPopUp = value; }  }
     public int PatientMaxHp { get { return patientMaxHP; } set { patientMaxHP = value; } }
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
@@ -47,9 +49,32 @@ public class PatientScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //RadialBarState();
+        //TimeOutDamage();
         UpdateHealthBar();
     }
+
+    //public void TimeOutDamage()
+    //{
+    //    if (instantiatedPopUp != null)
+    //    {
+    //        PopUp currentPopUp = instantiatedPopUp.GetComponentInChildren<PopUp>();
+    //        currentPopUp.LerpToZero();
+    //        if (currentPopUp.CurrentFillAmount <= 0)
+    //        {
+    //            Destroy(instantiatedPopUp.gameObject);
+    //            SpawnParticles(damageParticles, particlesDuration);
+    //            currentHP -= 2; // Serialize that shit!
+    //            if (currentHP <= 0)
+    //            {
+    //                SpawnParticles(deathParticles, particlesDuration);
+    //                FindObjectOfType<playerScript>().CurrentStressLvl += 10;
+    //                DestroyHealthBar();
+    //                Destroy(this.gameObject, 3);
+    //            }
+    //        }
+    //    }
+    //}
+
 
     public void InstantiatePopUp(Task currentTask)
     {

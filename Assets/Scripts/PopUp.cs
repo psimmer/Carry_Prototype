@@ -27,38 +27,46 @@ public class PopUp : MonoBehaviour
     }
     private void Update()
     {
-        RadialBar();
+        LerpToZero();
+        TimeOut();
+
     }
 
-    public void RadialBar()
-    {
-        player = FindObjectOfType<playerScript>();
-        patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
+    //public void RadialBar()
+    //{
+    //    //player = FindObjectOfType<playerScript>();
+    //    //patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
+    //    //Debug.Log(patient);
+    //    //if (Input.GetKeyUp(KeyCode.Space) && player.collidesWithPatient)
+    //    //{
+    //    //    PatientDamage(patient);
+    //    //}
+    //    //if (Input.GetKey(KeyCode.Space) && player.collidesWithPatient)
+    //    //{
+    //    //    LerpToHeal();
+    //    //    if(radialBarImg.fillAmount >= 1)
+    //    //    {
+    //    //        PatientHealing();
+    //    //        patient.DestroyPopUp();
+    //    //    }
+    //    //}
+    //    //else
+    //    //{
+    //    //    LerpToZero();
+    //    //}
+    //}
 
-        if (Input.GetKeyUp(KeyCode.Space) && player.collidesWithPatient)
-        {
-            PatientDamage();
-        }
-        if (Input.GetKey(KeyCode.Space) && player.collidesWithPatient)
-        {
-            radialBarImg.fillAmount = Mathf.Lerp(CurrentFillAmount, maxValue, interpolationPoint);
-            interpolationPoint += Time.deltaTime * speed;
-            if(radialBarImg.fillAmount >= 1)
-            {
-                PatientHealing();
-                inventory.itemHolder.item = null;
-                patient.DestroyPopUp();
-            }
-        }
-        else
-        {
+    //public void LerpToHeal()
+    //{
+    //        radialBarImg.fillAmount = Mathf.Lerp(radialBarImg.fillAmount, maxValue, interpolationPoint);
+    //        interpolationPoint += Time.deltaTime * speed;
+    //}
+    public void LerpToZero()
+    {
             radialBarImg.fillAmount = Mathf.Lerp(maxValue, minValue, interpolationPoint);
             interpolationPoint += Time.deltaTime * speed;
             CurrentFillAmount = radialBarImg.fillAmount;
-            TimeOut();
-        }
     }
-
     public void TimeOut()
     {
         if (CurrentFillAmount <= 0)
@@ -67,11 +75,7 @@ public class PopUp : MonoBehaviour
 
             if (patient.CurrentHP <= 0)
             {
-                patient.SpawnParticles(deathParticles, 3);
-                player.CurrentStressLvl += patientDeathPunishment;
-                FindObjectOfType<GameManager>().removePatientFromList(patient);
-                patient.DestroyHealthBar();
-                Destroy(patient.gameObject, 3);
+                PatientDeath();
             }
         }
     }
@@ -85,14 +89,22 @@ public class PopUp : MonoBehaviour
         player.CurrentStressLvl += timeOutPunishment;
         patient.DestroyPopUp();
     }
-    public void PatientHealing()
+    //public void PatientHealing()
+    //{
+    //    player = FindObjectOfType<playerScript>();
+    //    patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
+    //    patient.CurrentHP += timeOutDamage;
+    //    patient.SpawnParticles(healingParticles, 3);
+    //    player.CurrentStressLvl -= timeOutPunishment;
+    //    patient.DestroyPopUp();
+    //}
+    public void PatientDeath()
     {
-        player = FindObjectOfType<playerScript>();
-        patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
-        patient.CurrentHP += timeOutDamage;
-        patient.SpawnParticles(healingParticles, 3);
-        player.CurrentStressLvl -= timeOutPunishment;
-        patient.DestroyPopUp();
+        this.patient.SpawnParticles(deathParticles, 3);
+        player.CurrentStressLvl += 10;
+        FindObjectOfType<GameManager>().removePatientFromList(patient);
+        patient.DestroyHealthBar();
+        Destroy(patient.gameObject, 3);
     }
 
 }
