@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     
     IEnumerator InstantiatePopUp()
     {
-        yield return new WaitForSeconds(Random.Range(6,8));
+        yield return new WaitForSeconds(7);
         IsTimerOn = true;
         StopCoroutine("InstantiatePopUp");
     }

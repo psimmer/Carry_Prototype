@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a310f18eaab282845839df8ad48052ef, type: 3}
   m_Name: Pills
   m_EditorClassIdentifier: 
-  restoreHealth: 7
+  restoreHealth: 4
   prefab: {fileID: 4870069835896869945, guid: 34f51be10f429d14a8528e8ad2f19174, type: 3}
   itemType: 1

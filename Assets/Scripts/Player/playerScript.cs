@@ -146,10 +146,10 @@ public class playerScript : MonoBehaviour
         PatientScript patient = obj.GetComponent<PatientScript>();
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient && patient.needSomething)
         {
-            patient.SpawnParticles(healingParticles, particlesDuration);
-            patient.DestroyPopUp();
+            //patient.SpawnParticles(healingParticles, particlesDuration);
+            //patient.DestroyPopUp();
             inventory.itemHolder.item = null;
-            patient.CurrentHP += currentItem.RestoreHealth;
+            //patient.CurrentHP += currentItem.RestoreHealth;
             this.CurrentStressLvl -= currentItem.RestoreHealth * stressReductionMultiplier;
             if (patient.CurrentHP >= patient.PatientMaxHp)
             {

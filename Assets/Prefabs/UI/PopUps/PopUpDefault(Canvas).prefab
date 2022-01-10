@@ -91,7 +91,13 @@ MonoBehaviour:
   interpolationPoint: 0
   radialBarImg: {fileID: 7679435976365058418}
   speed: 0.1
-  patient: {fileID: 0}
+  healingParticles: {fileID: 5048721385892816507, guid: 172cc0eeeb0c10e4289ade386f0b8dcd, type: 3}
+  damageParticles: {fileID: 1547498293661416764, guid: c15b5077315498b4ca930299472479f7, type: 3}
+  deathParticles: {fileID: 8751646875999502831, guid: 3494edaf403e6c744bca1b48b50dd7c4, type: 3}
+  timeOutDamage: 1
+  timeOutPunishment: 5
+  patientDeathPunishment: 20
+  inventory: {fileID: 11400000, guid: 5438030d06207fb49ba04691fae1527d, type: 2}
 --- !u!1 &2325009892537760199
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +182,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4233958760227929196
 MonoBehaviour:
   m_ObjectHideFlags: 0
