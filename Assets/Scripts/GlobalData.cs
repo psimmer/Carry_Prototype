@@ -11,6 +11,7 @@ public class GlobalData : MonoBehaviour
     public Vector3 currentPlayerPosition;
     public bool isSaveFileLoaded = false;
     public float timeLeft;
+    //public List<PatientScript> currentPatients;
     
     
 

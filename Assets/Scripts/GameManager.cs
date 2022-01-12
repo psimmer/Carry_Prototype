@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     private bool IsTimerOn = false;
     private List<PatientScript> patients = new List<PatientScript>();
+    //Player reference
+    //UIManager reference
+    //AudioManager reference
+    //SceneManager reference
 
     void Start()
     {

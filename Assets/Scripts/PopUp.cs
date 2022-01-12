@@ -15,7 +15,7 @@ public class PopUp : MonoBehaviour
     [SerializeField] private GameObject deathParticles;
     [SerializeField] private int timeOutDamage = 1;
     [SerializeField] private int timeOutPunishment = 5;
-    [SerializeField] private int patientDeathPunishment = 20;
+    //[SerializeField] private int patientDeathPunishment = 20;
     public InventoryObject inventory;
     private PatientScript patient;
     private playerScript player;
