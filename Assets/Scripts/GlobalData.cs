@@ -11,10 +11,10 @@ public class GlobalData : MonoBehaviour
     public Vector3 currentPlayerPosition;
     public bool isSaveFileLoaded = false;
     public float timeLeft;
-    //public List<PatientScript> currentPatients;
-    
-    
 
+    //List Music
+    //List SoundEffects
+    
     private void Awake()
     {
         if (instance == null)       //Singleton
@@ -25,6 +25,7 @@ public class GlobalData : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         DontDestroyOnLoad(gameObject);  //take GlobalData to the next scene
     }
 }

@@ -11,6 +11,7 @@ public class TimerScript : MonoBehaviour
 
     private void Start()
     {
+        //set the correct time when a save file is loaded
         if (GlobalData.instance.isSaveFileLoaded && GlobalData.instance != null)
         {
             UIManager.TimeLeft = GlobalData.instance.timeLeft;
@@ -43,7 +44,4 @@ public class TimerScript : MonoBehaviour
             SceneManager.LoadScene("LvlFinishMenu");
         }
     }
-
-    // Timer starts at '5:59' although timerText.text gets displayed before UIManager.timeLeft gets counted down. :thinking_Emoji: xD
-    // However, some other games "skip" the first second, too.
 }

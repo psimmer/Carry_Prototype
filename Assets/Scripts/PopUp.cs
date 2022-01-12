@@ -10,12 +10,11 @@ public class PopUp : MonoBehaviour
     [SerializeField] private float interpolationPoint = 0f;
     [SerializeField] private Image radialBarImg;
     [SerializeField] private float speed;
-    [SerializeField] private GameObject healingParticles;
     [SerializeField] private GameObject damageParticles;
     [SerializeField] private GameObject deathParticles;
-    [SerializeField] private int timeOutDamage = 1;
-    [SerializeField] private int timeOutPunishment = 5;
-    //[SerializeField] private int patientDeathPunishment = 20;
+    [SerializeField] private int timeOutDamagePatient = 1;
+    [SerializeField] private int timeOutStresslvlPlayer = 5;
+    
     public InventoryObject inventory;
     private PatientScript patient;
     private playerScript player;
@@ -32,35 +31,6 @@ public class PopUp : MonoBehaviour
 
     }
 
-    //public void RadialBar()
-    //{
-    //    //player = FindObjectOfType<playerScript>();
-    //    //patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
-    //    //Debug.Log(patient);
-    //    //if (Input.GetKeyUp(KeyCode.Space) && player.collidesWithPatient)
-    //    //{
-    //    //    PatientDamage(patient);
-    //    //}
-    //    //if (Input.GetKey(KeyCode.Space) && player.collidesWithPatient)
-    //    //{
-    //    //    LerpToHeal();
-    //    //    if(radialBarImg.fillAmount >= 1)
-    //    //    {
-    //    //        PatientHealing();
-    //    //        patient.DestroyPopUp();
-    //    //    }
-    //    //}
-    //    //else
-    //    //{
-    //    //    LerpToZero();
-    //    //}
-    //}
-
-    //public void LerpToHeal()
-    //{
-    //        radialBarImg.fillAmount = Mathf.Lerp(radialBarImg.fillAmount, maxValue, interpolationPoint);
-    //        interpolationPoint += Time.deltaTime * speed;
-    //}
     public void LerpToZero()
     {
             radialBarImg.fillAmount = Mathf.Lerp(maxValue, minValue, interpolationPoint);
@@ -84,20 +54,12 @@ public class PopUp : MonoBehaviour
     {
         player = FindObjectOfType<playerScript>();
         patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
-        patient.CurrentHP -= timeOutDamage;
+        patient.CurrentHP -= timeOutDamagePatient;
         patient.SpawnParticles(damageParticles, 3);
-        player.CurrentStressLvl += timeOutPunishment;
+        player.CurrentStressLvl += timeOutStresslvlPlayer;
         patient.DestroyPopUp();
     }
-    //public void PatientHealing()
-    //{
-    //    player = FindObjectOfType<playerScript>();
-    //    patient = gameObject.transform.parent.parent.GetComponent<PatientScript>();
-    //    patient.CurrentHP += timeOutDamage;
-    //    patient.SpawnParticles(healingParticles, 3);
-    //    player.CurrentStressLvl -= timeOutPunishment;
-    //    patient.DestroyPopUp();
-    //}
+  
     public void PatientDeath()
     {
         this.patient.SpawnParticles(deathParticles, 3);

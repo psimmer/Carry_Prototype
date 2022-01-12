@@ -14,10 +14,6 @@ public class GameManager : MonoBehaviour
 
     private bool IsTimerOn = false;
     private List<PatientScript> patients = new List<PatientScript>();
-    //Player reference
-    //UIManager reference
-    //AudioManager reference
-    //SceneManager reference
 
     void Start()
     {
@@ -27,7 +23,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             player.transform.position = GlobalData.instance.currentPlayerPosition;
             player.CurrentStressLvl = GlobalData.instance.currentStresslvl;
-            //player.inventory.itemHolder.item.ItemType = (ItemType)GlobalData.instance.currentItem;
             GlobalData.instance.isSaveFileLoaded = false;
 
         }
@@ -42,7 +37,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         RandomPopUp();
-        //escPause();
         player.isStressLvlMax();
     }
     /// <summary>

@@ -19,18 +19,13 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Game will be started
-    /// </summary>
     public void StartGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Scene");
     }
 
-    /// <summary>
-    /// Exit to Desktop
-    /// </summary>
+
     public void ExitGame()
     {
         Application.Quit();
@@ -46,7 +41,6 @@ public class MainMenuScript : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
         if (data != null)
         {
-            //Debug.Log("currentStresslvl: " + data.currentStressLvl);
             GlobalData.instance.isSaveFileLoaded = true;
 
             GlobalData.instance.currentStresslvl = data.currentStressLvl;

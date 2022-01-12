@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+//All ItemTypes we have (for the prototpye 2)
 public enum ItemType
 {
     Bandage,
-    Pill,                  //All ItemTypes we have
-    Telephone,
-    CoffeMachine
+    Pill                  
 }
 
 

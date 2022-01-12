@@ -3131,7 +3131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.9675
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d85f7ba8d97fc6146b0d27eec9ee4220, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7701,6 +7701,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 530705477335051711, guid: 495c022de5027014da4c638f5a7add3c, type: 3}
+      propertyPath: currentStressLvl
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 530705477335051711, guid: 495c022de5027014da4c638f5a7add3c, type: 3}
       propertyPath: stressReductionMultiplier
       value: 1

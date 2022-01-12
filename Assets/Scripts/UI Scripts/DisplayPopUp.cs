@@ -10,7 +10,6 @@ public class DisplayPopUp : MonoBehaviour
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera");
 
-        // PopUp looks to camera
         transform.LookAt(transform.position + cam.transform.forward);
     }
 

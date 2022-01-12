@@ -14,14 +14,6 @@ public class PlayerData
     public PlayerData(playerScript player, float _timeLeft)
     {
         currentStressLvl = player.CurrentStressLvl;
-        //if (player.inventory != null)
-        //{
-        //    currentItem = (int)player.inventory.itemHolder.item.ItemType;
-        //}
-        //else
-        //{
-        //    //maybe implement 'none' in enum, so i dont have a nullreference exception
-        //}
 
         position = new float[3];
         position[0] = player.transform.position.x;

@@ -28,17 +28,13 @@ public class playerScript : MonoBehaviour
 
     public InventoryObject inventory;
     public bool collidesWithPatient { get; set; }
-    public float MaxStressLvl
-    {
-        get { return maxStressLvl; }
-    }
 
     public float CurrentStressLvl
     {
         get { return currentStressLvl; }
         set 
         { 
-            if (value > 0) // maybe we need to check the upper limit too of the stress Level.
+            if (value > 0) 
             {
                 currentStressLvl = value; 
             }
@@ -51,13 +47,13 @@ public class playerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // popUpBool checks if the player triggers with the patient
+        // collidesWithPatient checks if the player triggers with the patient
         if (other.gameObject.CompareTag("Patient"))
         {
             collidesWithPatient = true;
         }
     }
-    // We lose the connectivity to the item which we was triggering and set itemholder to null
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Patient"))
@@ -78,6 +74,7 @@ public class playerScript : MonoBehaviour
             inventory.AddItem(item.item);
         }
 
+        //check if the current item matches the task
         if (other.gameObject.CompareTag("Patient") && inventory.itemHolder.item != null)
         {
             switch (other.GetComponent<PatientScript>().currentTask)
@@ -119,6 +116,7 @@ public class playerScript : MonoBehaviour
     {
         PatientScript patient = obj.GetComponent<PatientScript>();
 
+        //Destroy Popup, spawn particles, set values of patient
         if (Input.GetKey(KeyCode.Space) && collidesWithPatient)
         {
             patient.SpawnParticles(damageParticles, particlesDuration);
@@ -132,7 +130,6 @@ public class playerScript : MonoBehaviour
                 patient.SpawnParticles(deathParticles, particlesDuration);
                 FindObjectOfType<GameManager>().removePatientFromList(patient);
                 patient.DestroyHealthBar();
-                //patient.DestroyPopUp();
                 Destroy(obj, particlesDuration);
             }
         }

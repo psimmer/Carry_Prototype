@@ -11,18 +11,18 @@ public enum Task
 
 public class PatientScript : MonoBehaviour
 {
-    [SerializeField] private GameObject deathParticles;
-
-    [SerializeField] private GameObject damageParticles;
-    [SerializeField] private float particlesDuration;
+    //PopUps
     [SerializeField] private GameObject bandagePopUp;
     [SerializeField] private GameObject pillPopUp;
-    [SerializeField] private GameObject instantiatedPopUp;
+    private GameObject instantiatedPopUp;
+
+    //Patient members
     [SerializeField] public Task currentTask;
     [SerializeField] private int minCurrentHp;
     [SerializeField] private int maxCurrentHp;
     [SerializeField] private int currentHP;
     [SerializeField] private int patientMaxHP;
+
     // Health Bar section:
     [SerializeField] private GameObject healthBarPrefab;
     private GameObject healthBar;
@@ -41,44 +41,18 @@ public class PatientScript : MonoBehaviour
 
     private void Start()
     {
-        //needSomething = false;
         instantiatedPopUp = null;
         currentHP = GetRandomHp();
         InstantiateHealthBar();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        //TimeOutDamage();
         UpdateHealthBar();
     }
 
-    //public void TimeOutDamage()
-    //{
-    //    if (instantiatedPopUp != null)
-    //    {
-    //        PopUp currentPopUp = instantiatedPopUp.GetComponentInChildren<PopUp>();
-    //        currentPopUp.LerpToZero();
-    //        if (currentPopUp.CurrentFillAmount <= 0)
-    //        {
-    //            Destroy(instantiatedPopUp.gameObject);
-    //            SpawnParticles(damageParticles, particlesDuration);
-    //            currentHP -= 2; // Serialize that shit!
-    //            if (currentHP <= 0)
-    //            {
-    //                SpawnParticles(deathParticles, particlesDuration);
-    //                FindObjectOfType<playerScript>().CurrentStressLvl += 10;
-    //                DestroyHealthBar();
-    //                Destroy(this.gameObject, 3);
-    //            }
-    //        }
-    //    }
-    //}
-
-
     public void InstantiatePopUp(Task currentTask)
     {
-
         Vector3 patientPos = transform.position;
         switch (currentTask)
         {
@@ -95,7 +69,6 @@ public class PatientScript : MonoBehaviour
         }
         instantiatedPopUp.transform.position = new Vector3(patientPos.x, patientPos.y + 1.5f, patientPos.z);
         instantiatedPopUp.transform.SetParent(patientTransform);
-        //instantiatedPopUp.transform.SetParent(GameObject.Find("Canvas").transform, false);
     }
 
     public void DestroyPopUp()
@@ -106,12 +79,6 @@ public class PatientScript : MonoBehaviour
             Destroy(instantiatedPopUp);
         }
     }
-
-    //public float GetRandomTime()
-    //{
-    //    randomTime = Random.Range(minTimeTillTask, maxTimeTillTask);
-    //    return randomTime;
-    //}
 
     public int GetRandomHp()
     {
@@ -138,7 +105,8 @@ public class PatientScript : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        if (healthBar) // if healthbar exists on patient (else it will make everything kaput when patients are destroyed)
+        // if healthbar exists on patient (else it will make everything kaput when patients are destroyed)
+        if (healthBar) 
         {
             // position healthbar (it will follow the patient) and update the value
             patientTransform = gameObject.transform;
@@ -149,13 +117,10 @@ public class PatientScript : MonoBehaviour
                 CalculateHealthBarDeltaY(positionDelta.x), patientTransform.position.z));
             healthBar.transform.position = healthBarPos;
             slider.value = LerpHealthBar(slider.value, currentHP);
-
-            //slider.value = currentHP;
         }
     }
-
-    // the 2 following functions are for positioning the health bars in the right place. They will only work with our current positioning of patients, and the values were added and tested manually
-    // if you move a patient or the camera in the hierarchy, the values of these 2 functions will have to be redone to avoid overlaping the pop-ups with the health bars (looks bad)
+    
+    //Healthbar positioning
     private float CalculateHealthBarDeltaX(float screenPosition)
     {
         if (screenPosition >= 0 && screenPosition <= 400)
@@ -176,6 +141,8 @@ public class PatientScript : MonoBehaviour
         }
         else return 0;
     }
+
+    //Healthbar positioning
     private float CalculateHealthBarDeltaY(float screenPosition)
     {
         if (screenPosition >= 0 && screenPosition <= 400)
